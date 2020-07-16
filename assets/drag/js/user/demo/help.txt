@@ -1,0 +1,2 @@
+这个目录存放的是我们的一些示例 并无使用意义 当您遇到一些场景时可参考
+只要把index-xxx.html种的my-callback.js替换成本目录对应的my-callback-xxx.js即可体验

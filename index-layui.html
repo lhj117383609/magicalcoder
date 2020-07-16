@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--本软件版权归www.magicalcoder.com所有，著作权人：何栋宇，qq:799374340;如果您觉得好，欢迎购买我们的专业离线版，支持互联网创业，支持原创，在国内营造一个良性的知识付费氛围，大家都是受益者，一次购买永久免费升级哦，本软件已获得软件著作权。-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <title>MagicalCoder表单设计器-可视化拖拽布局器</title>
+    <meta name="description" content="MagicalDrag,layui表单设计,vue表单设计器,elementUi表单设计器,前端拖拽布局器,可视化拖拽布局器,数据可视化,数据可视化编辑器">
+    <meta name="keywords" content="MagicalDrag,layui表单设计,vue表单设计器,elementUi表单设计器,前端拖拽布局器,可视化拖拽布局器,数据可视化,数据可视化编辑器">
+    <!--统一开源免费图标字体-->
+    <link href="assets/drag/js/lib/remixicon/remixicon.css" rel="stylesheet">
+    <!--基于开源ztree的dom树插件-->
+    <link rel="stylesheet" href="assets/drag/js/lib/ztree3/css/zTreeStyle/zTreeStyle.css" media="all">
+    <!--layui样式-->
+    <link href="assets/drag/layui-v2.4.5/layui/css/layui.css" rel="stylesheet">
+    <link href="assets/drag/layui-v2.4.5/layui-ext.css" rel="stylesheet">
+    <!--皮肤-->
+    <link rel="stylesheet" href="assets/drag/css/skin/darcula.css">
+    <link rel="stylesheet" href="assets/drag/css/skin/white.css">
+    <!--MagicalCoder基础布局器界面样式-->
+    <link href="assets/drag/css/magical-drag-all.css" rel="stylesheet">
+    <!--兼容性集成js-->
+    <script type="text/javascript" src="assets/drag/js/lib/jscore.js"></script>
+    <script type="text/javascript" src="assets/drag/js/lib/json3.js"></script>
+    <script type="text/javascript" src="assets/drag/js/lib/jquery-2.0.0.min.js"></script>
+</head>
+<body class="mc-skin-darcula magicalcoder-edit" style="">
+
+<div id="magicalcoder-page-main">
+    <div class="magicalcoder-page-header" >
+        <div class="magicalcoder-page-title" title="MagicalCoder布局器">
+            <!-- <i title="返回" class="layui-icon layui-icon-return" style="font-size: 19px;cursor:pointer">  </i> -->
+            <a style="color: #ffffe6" href="http://www.magicalcoder.com">MagicalCoder布局器</a>
+        </div>
+        <div style="color: #ffffe6; font-size: 13px; position: absolute; top: 24px; left: 380px;">
+            QQ交流群：684548820(4群)
+            <a style="color:#ffffe6;margin-left: 10px;" target="_blank" href="https://edu.csdn.net/course/play/10747/316610">视频教程</a>
+        </div>
+
+        <div class="magicalcoder-page-link layui-form" lay-filter="magicalcoder-page-link">
+                <div class="layui-input-inline">
+                    UI:
+                </div>
+                <div class="layui-input-inline" style="width: 80px;height: 40px;">
+                    <select  lay-filter="select-filter-top-change-frame-type">
+                         <!--如果您的value以http开头，则浏览器会直接重定向到此地址-->
+                        <option value="index-element.html">Element</option>
+                        <option value="index-layui.html" selected>Layui</option>
+                        <option value="index-antdesign.html">AntDesgin</option>
+                        <option value="index-miniui.html">Miniui</option>
+                        <option value="index-vant.html">Vant</option>
+                        <option value="index-vuetify.html">Vuetify</option>
+                        <option value="index-bootstrap4.html">Bootstrap4</option>
+                    </select>
+                </div>
+                <div class="layui-input-inline">
+                    皮肤:
+                </div>
+                <div class="layui-input-inline layui-form" style="width: 80px;height: 40px;">
+                    <select  lay-filter="select-filter-top-change-skin">
+                        <option value="mc-skin-darcula">暗黑</option>
+                        <option value="mc-skin-white">自然</option>
+                    </select>
+                </div>
+                <div class="layui-input-inline">
+                    设备:
+                </div>
+                <div class="layui-input-inline" style="width: 90px;height: 40px;">
+                    <select lay-filter="select-filter-top-change-device"></select>
+                </div>
+                <div class="layui-input-inline">
+                    W:
+                </div>
+                <div class="layui-input-inline" style="width: 70px;height: 40px;">
+                    <input id="mc-device-w" class="layui-input" type="text"/>
+                </div>
+                <div class="layui-input-inline">
+                    H:
+                </div>
+                <div class="layui-input-inline" style="width: 70px;height: 40px;">
+                    <input id="mc-device-h" class="layui-input" type="text"/>
+                </div>
+                <div class="layui-input-inline">
+                    <button id="mc-device-x-y-change" class="layui-btn layui-btn-sm layui-btn-primary" style="height: 38px;">横屏</button>
+                </div>
+                <div class="layui-input-inline">
+                    网格:
+                </div>
+                <div class="layui-input-inline" style="width: 80px;height: 40px;">
+                    <select  lay-filter="select-filter-top-change-net-line">
+                        <!--如果您的value以http开头，则浏览器会直接重定向到此地址-->
+                        <option value="">无</option>
+                        <option value="mc-net-line-40">40</option>
+                        <option value="mc-net-line-20">20</option>
+                    </select>
+                </div>
+                <div class="layui-input-inline" style="width: 38px;height: 40px;">
+                    <div id="mc-canvas-background-color"></div>
+                </div>
+                <div class="layui-input-inline" style="width: 70px;height: 40px;">
+                    <button type="button" class="layui-btn" id="mc-canvas-background-image">
+                      <i class="layui-icon">&#xe67c;</i>背景图
+                    </button>
+                </div>
+                <a href="http://bbs.magicalcoder.com/user/price">
+                    <span><img class="iconfont" src="assets/drag/img/header/off2.png" style="margin-left: 20px">获取离线版</span>
+                </a>
+        </div>
+    </div>
+    <div class="magicalcoder-page-container">
+        <div class="layui-row">
+            <div class="layui-col-xs2 magicalcoder-hide-left-area">
+                <!--左侧 做个能收展的-->
+                <div class="layui-row" style="height: 100%;">
+                    <div class="layui-col-xs12 el-aside" style="height: 60%;">
+                        <!--左侧自定义组件列表-->
+                        <div class="magicalcoder-left-config magicalcoder-page-drag-item-list"></div>
+                    </div>
+                    <div class="layui-col-xs12 el-aside" style="height: 40%;">
+                        <!--结构树-->
+                        <div id="magical_coder_ztree" class="ztree"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs8 magicalcoder-hide-center-area">
+                <!--工作台-->
+                <section class="el-container center-container is-vertical">
+                    <header class="el-header btn-bar">
+                        <div class="layui-row">
+                            <div class="layui-col-lg3 layui-col-md4 layui-col-xs12">
+                                <div class="el-radio-group">
+                                    <label title="会把隐藏的元素以方框形式展示，更容易拖拽和选择元素" data-value="view" class="el-radio-button el-radio-button--small"><span class="el-radio-button__inner el-radio-group-label-active">视图</span></label>
+                                    <label title="最大化的精简工作区域，无限接近最终作品" data-value="pretty" class="el-radio-button el-radio-button--small"><span class="el-radio-button__inner ">预览</span></label>
+                                    <label title="您可以插入style样式" data-value="css" class="el-radio-button el-radio-button--small"><span class="el-radio-button__inner">样式</span></label>
+                                    <label title="您可以插入html代码" data-value="code" class="el-radio-button el-radio-button--small"><span class="el-radio-button__inner">HTML</span></label>
+                                    <label title="辅助源码的javascript脚本" data-value="javascript" class="el-radio-button el-radio-button--small"><span class="el-radio-button__inner">脚本</span></label>
+                                </div>
+                            </div>
+                            <div class="layui-col-lg6 layui-col-md4 layui-col-xs12">
+                                <div class="magicalcoder-header-tools">
+                                    <button name="magical_coder_layout_left" type="button" class="el-button el-button--text el-button--medium mc-transform-90"><i title="左移对齐" class="ri-align-bottom"></i></button>
+                                    <button name="magical_coder_layout_top" type="button" class="el-button el-button--text el-button--medium"><i title="上移对齐" class="ri-align-top"></i></button>
+                                    <button name="magical_coder_layout_right" type="button" class="el-button el-button--text el-button--medium mc-transform-90"><i title="右移对齐" class="ri-align-top"></i></button>
+                                    <button name="magical_coder_layout_bottom" type="button" class="el-button el-button--text el-button--medium"><i title="下移对齐" class="ri-align-bottom"></i></button>
+                                    <button name="magical_coder_layout_vertically" type="button" class="el-button el-button--text el-button--medium"><i title="水平居中对齐" class="ri-align-vertically"></i></button>
+                                    <button name="magical_coder_layout_horizontal" type="button" class="el-button el-button--text el-button--medium mc-transform-90"><i title="垂直居中对齐" class="ri-align-vertically"></i></button>
+
+                                    <button name="magical_coder_align_left" type="button" class="el-button el-button--text el-button--medium"><i title="内部左对齐" class="ri-align-left"></i></button>
+                                    <button name="magical_coder_align_center" type="button" class="el-button el-button--text el-button--medium"><i title="内部居中" class="ri-align-center"></i></button>
+                                    <button name="magical_coder_align_right" type="button" class="el-button el-button--text el-button--medium"><i title="内部右对齐" class="ri-align-right"></i></button>
+                                    <button name="magical_coder_choose_parent_dom" type="button" class="el-button el-button--text el-button--medium"><i title="聚焦外层结构" class="ri-radio-button-line"></i></button>
+                                    <button name="magical_coder_move_to_prev" type="button" class="el-button el-button--text el-button--medium"><i title="向前移动(Ctrl+ <-)" class="ri-arrow-up-line"></i></button>
+                                    <button name="magical_coder_move_to_next" type="button" class="el-button el-button--text el-button--medium"><i title="向后移动(Ctrl+ ->)" class="ri-arrow-down-line"></i></button>
+                                    <button name="magical_coder_undo" type="button" class="el-button el-button--text el-button--medium"><i title="撤销(Ctrl+Z)" class="ri-arrow-go-back-line"></i></button>
+                                    <button name="magical_coder_redo" type="button" class="el-button el-button--text el-button--medium"><i title="重做(Ctrl+Y)" class="ri-arrow-go-forward-line"></i></button>
+                                    <button name="magical_coder_format_code" type="button" class="el-button el-button--text el-button--medium layui-hide"><i title="格式化代码" class="layui-icon layui-icon-fonts-clear"></i></button>
+                                    <button name="magical_coder_debug_javascript" type="button" class="el-button el-button--text el-button--medium"><i title="开启调试JS模式" class="ri-bug-line"></i></button>
+                                </div>
+                            </div>
+                            <div class="layui-col-lg3 layui-col-md4 layui-col-xs12">
+                                <div  class="magicalcoder-header-tools3">
+                                    <button id="magical_coder_clear" type="button" class="el-button el-button--text el-button--medium"><i class="ri-delete-bin-line" title="重置"></i></button>
+                                    <button id="magical_coder_save" type="button" class="el-button el-button--text el-button--medium"><i class="ri-save-line" title="保存"></i></button>
+                                    <button id="magical_coder_download" type="button" class="el-button el-button--text el-button--medium"><i class="ri-download-2-line" title="下载"></i></button>
+                                    <button id="magical_coder_view" type="button" class="el-button el-button--text el-button--medium" title="弹窗预览"><i class="ri-airplay-line" title="预览"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <main class="magicalcoder-workground el-main widget-empty layui-form" lay-filter="magicalcoderDemoFilter">
+                        <iframe id="dropInnerIframe" class="layui-hide" src="iframe-layui-2.5.4.html"></iframe>
+                        <div id="magicalcoderCodeEdit" class="magicalcoder-demo-code magicalcoder-hide" style="font-size: 15px;height: 100%;">
+                        </div>
+                        <div id="magicalcoderJavascriptEdit" class="magicalcoder-demo-javascript magicalcoder-hide" style="font-size: 15px;height: 100%;">
+                        </div>
+                        <div id="magicalcoderCssEdit" class="magicalcoder-demo-css magicalcoder-hide" style="font-size: 15px;height: 100%;">
+                        </div>
+                    </main>
+                    <footer class="el-footer">
+                        <div class="magicalcoder-hide-area">
+                            <!--右键菜单-->
+                            <ul id="magicalcoderRightMenu" class="layui-table right-menu">
+                            </ul>
+                            <!--资源加载中-->
+                            <div id="loading" class="layui-progress layui-progress-big" lay-filter="loadingFilter">
+                                <div class="layui-progress-bar" lay-percent="99%"></div>
+                            </div>
+                            <!--样式工具箱-->
+                            <div class="layui-fluid magical-coder-mstyle" style="display: none">
+                                <form class="layui-form " lay-filter="magicalCoderMstyleForm">
+                                    <div class="layui-tab" lay-filter="magicalcoder-mstyle-lay-tab-change">
+                                        <ul class="layui-tab-title">
+                                            <li class="layui-this" lay-id="magicalcoder-mstyle-font">文字</li>
+                                            <li class="" lay-id="magicalcoder-mstyle-layout">布局</li>
+                                            <li class="" lay-id="magicalcoder-mstyle-background">背景</li>
+                                        </ul>
+                                        <div class="layui-tab-content">
+                                            <div class="layui-tab-item layui-show">
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="color">文本颜色</label>
+                                                    <div class="layui-input-block">
+                                                        <div name="color" class="magicalcoder-color-picker layui-inline" mc-attr-predefine="true" mc-attr-alpha="true"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="text-indent">文本缩进</label>
+                                                    <div class="layui-input-block">
+                                                        <div mc-style-dw="px" name="text-indent" class="magicalcoder-slider" mc-attr-tips="true" mc-attr-input="true" mc-attr-min="0" mc-attr-max="1000"></div>
+                                                        <i class="layui-icon layui-icon-set-sm icon-tmp"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="text-align">水平对齐</label><div class="layui-input-block">
+                                                    <select lay-filter="magical-coder-filter-mstyle" name="text-align" class=""><option selected="" value="">请选择</option><option value="left">靠左</option><option value="right">靠右</option><option value="center">居中</option><option value="justify">两端对齐</option></select>
+                                                </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="word-spacing">文字间距</label><div class="layui-input-block">
+                                                    <div mc-style-dw="px" name="word-spacing" class="magicalcoder-slider" mc-attr-tips="true" mc-attr-input="true" mc-attr-min="0" mc-attr-max="1000"></div>
+                                                    <i class="layui-icon layui-icon-set-sm icon-tmp"></i>
+                                                </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="letter-spacing">字母间距</label><div class="layui-input-block">
+                                                    <div mc-style-dw="px" name="letter-spacing" class="magicalcoder-slider" mc-attr-tips="true" mc-attr-input="true" mc-attr-min="0" mc-attr-max="100"></div>
+                                                    <i class="layui-icon layui-icon-set-sm icon-tmp"></i>
+                                                </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="text-transform">大小写</label><div class="layui-input-block">
+                                                    <select lay-filter="magical-coder-filter-mstyle"  name="text-transform" class=""><option selected="" value="">请选择</option><option value="uppercase">大写</option><option value="lowercase">小写</option><option value="capitalize">大写字母开头</option></select>
+                                                </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="text-decoration">文本装饰</label><div class="layui-input-block">
+                                                    <select lay-filter="magical-coder-filter-mstyle"  name="text-decoration" class=""><option selected="" value="">请选择</option><option value="underline">下划线</option><option value="line-through">中划线</option><option value="overline">上划线</option><option value="blink">闪烁</option></select>
+                                                </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="text-decoration">文本方向</label><div class="layui-input-block">
+                                                    <select lay-filter="magical-coder-filter-mstyle"  name="direction" class=""><option selected="" value="">请选择</option><option value="ltr">从左至右</option><option value="rtl">从右至左</option></select>
+                                                </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="text-decoration">空白处理</label><div class="layui-input-block">
+                                                    <select lay-filter="magical-coder-filter-mstyle"  name="white-space" class=""><option selected="" value="">请选择</option><option value="pre-line">合并空白保留换行</option><option value="nowrap">br换行</option><option value="pre">保留空白</option><option value="pre-wrap">保留空白保留换行</option></select>
+                                                </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <hr class="">
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="font-family">字体名称</label><div class="layui-input-block">
+                                                    <input type="text" autocomplete="off" class="magicalcoder-text layui-input" name="font-family">
+                                                </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="font-style">字体风格</label><div class="layui-input-block">
+                                                    <select lay-filter="magical-coder-filter-mstyle"  name="font-style" class=""><option selected="" value="">请选择</option><option value="italic">斜体</option><option value="oblique">倾斜</option></select>
+                                                </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="font-size">字体大小</label><div class="layui-input-block">
+                                                    <div mc-style-dw="px" name="font-size" class="magicalcoder-slider" mc-attr-tips="true" mc-attr-input="true" mc-attr-min="0" mc-attr-max="100"></div>
+                                                    <i class="layui-icon layui-icon-set-sm icon-tmp"></i>
+                                                </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="font-weight">字体加粗</label><div class="layui-input-block">
+                                                    <select lay-filter="magical-coder-filter-mstyle"  name="font-weight" class=""><option selected="" value="">请选择</option><option value="lighter">极细</option><option value="bold">加粗</option><option value="bolder">更粗</option><option value="100">100</option><option value="200">200</option><option value="300">300</option><option value="400">400</option><option value="500">500</option><option value="600">600</option><option value="700">700</option><option value="800">800</option><option value="900">900</option></select>
+                                                </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="layui-tab-item">
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="width">宽度</label><div class="layui-input-block">
+                                                    <div mc-style-dw="%" name="width" class="magicalcoder-slider" mc-attr-tips="true" mc-attr-input="true" mc-attr-min="0" mc-attr-max="2000"></div>
+                                                    <i class="layui-icon layui-icon-set-sm icon-tmp"></i>
+                                                </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="height">高度</label><div class="layui-input-block">
+                                                    <div mc-style-dw="px" name="height" class="magicalcoder-slider" mc-attr-tips="true" mc-attr-input="true" mc-attr-min="0" mc-attr-max="2000"></div>
+                                                    <i class="layui-icon layui-icon-set-sm icon-tmp"></i>
+                                                </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="max-width">最大宽度</label><div class="layui-input-block">
+                                                    <div mc-style-dw="%" name="max-width" class="magicalcoder-slider" mc-attr-tips="true" mc-attr-input="true" mc-attr-min="0" mc-attr-max="2000"></div>
+                                                    <i class="layui-icon layui-icon-set-sm icon-tmp"></i>
+                                                </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="max-height">最大高度</label><div class="layui-input-block">
+                                                    <div mc-style-dw="px" name="max-height" class="magicalcoder-slider" mc-attr-tips="true" mc-attr-input="true" mc-attr-min="0" mc-attr-max="2000"></div>
+                                                    <i class="layui-icon layui-icon-set-sm icon-tmp"></i>
+                                                </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="min-width">最小宽度</label><div class="layui-input-block">
+                                                    <div mc-style-dw="%" name="min-width" class="magicalcoder-slider" mc-attr-tips="true" mc-attr-input="true" mc-attr-min="0" mc-attr-max="2000"></div>
+                                                    <i class="layui-icon layui-icon-set-sm icon-tmp"></i>
+                                                </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="min-height">最小高度</label><div class="layui-input-block">
+                                                    <div mc-style-dw="px" name="min-height" class="magicalcoder-slider" mc-attr-tips="true" mc-attr-input="true" mc-attr-min="0" mc-attr-max="2000"></div>
+                                                    <i class="layui-icon layui-icon-set-sm icon-tmp"></i>
+                                                </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="line-height">行高</label><div class="layui-input-block">
+                                                    <div mc-style-dw="px" name="line-height" class="magicalcoder-slider" mc-attr-tips="true" mc-attr-input="true" mc-attr-min="0" mc-attr-max="100"></div>
+                                                    <i class="layui-icon layui-icon-set-sm icon-tmp"></i>
+                                                </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <hr class="">
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="float">浮动</label><div class="layui-input-block">
+                                                    <select lay-filter="magical-coder-filter-mstyle"  class="" name="float"><option selected="" value="">请选择</option><option value="left">向左</option><option value="right">向右</option></select>
+                                                </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <hr class="">
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="position">定位</label><div class="layui-input-block">
+                                                    <select lay-filter="magical-coder-filter-mstyle"  class="" name="position"><option selected="" value="">请选择</option><option value="absolute">绝对定位-针对父元素</option><option value="fixed">固定定位-针对浏览器</option><option value="relative">相对定位-自身</option><option value="static">顺序定位</option></select>
+                                                </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="top,right,bottom,left">偏移</label>
+                                                    <div class="layui-input-block">
+                                                        <div class="layui-row layui-col-space5">
+                                                            <div class="layui-col-md12">
+                                                                <p>上</p>
+                                                                <div mc-style-dw="px" name="top" class="magicalcoder-slider" mc-attr-tips="true" mc-attr-input="true" mc-attr-min="-1000" mc-attr-max="1000"></div>
+                                                                <i class="layui-icon layui-icon-set-sm icon-tmp"></i>
+                                                            </div>
+                                                            <div class="layui-col-md12" style="height: 20px">
+                                                            </div>
+                                                            <div class="layui-col-md12">
+                                                                <p>下</p>
+                                                                <div mc-style-dw="px" name="bottom" class="magicalcoder-slider" mc-attr-tips="true" mc-attr-input="true" mc-attr-min="-1000" mc-attr-max="1000"></div>
+                                                                <i class="layui-icon layui-icon-set-sm icon-tmp"></i>
+                                                            </div>
+                                                            <div class="layui-col-md12" style="height: 20px">
+                                                            </div>
+                                                            <div class="layui-col-md12">
+                                                                <p>左</p>
+                                                                <div mc-style-dw="px" name="left" class="magicalcoder-slider" mc-attr-tips="true" mc-attr-input="true" mc-attr-min="-1000" mc-attr-max="1000"></div>
+                                                                <i class="layui-icon layui-icon-set-sm icon-tmp"></i>
+                                                            </div>
+                                                            <div class="layui-col-md12" style="height: 20px">
+                                                            </div>
+                                                            <div class="layui-col-md12">
+                                                                <p>右</p>
+                                                                <div mc-style-dw="px" name="right" class="magicalcoder-slider" mc-attr-tips="true" mc-attr-input="true" mc-attr-min="-1000" mc-attr-max="1000"></div>
+                                                                <i class="layui-icon layui-icon-set-sm icon-tmp"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <hr class="">
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="top,right,bottom,left">内边距</label>
+                                                    <div class="layui-input-block">
+                                                        <div class="layui-row layui-col-space5">
+                                                            <div class="layui-col-md12">
+                                                                <p>上</p>
+                                                                <div mc-style-dw="px" name="padding-top" class="magicalcoder-slider" mc-attr-tips="true" mc-attr-input="true" mc-attr-min="0" mc-attr-max="2000"></div>
+                                                                <i class="layui-icon layui-icon-set-sm icon-tmp"></i>
+                                                            </div>
+                                                            <div class="layui-col-md12" style="height: 20px">
+                                                            </div>
+                                                            <div class="layui-col-md12">
+                                                                <p>下</p>
+                                                                <div mc-style-dw="px" name="padding-bottom" class="magicalcoder-slider" mc-attr-tips="true" mc-attr-input="true" mc-attr-min="0" mc-attr-max="2000"></div>
+                                                                <i class="layui-icon layui-icon-set-sm icon-tmp"></i>
+                                                            </div>
+                                                            <div class="layui-col-md12" style="height: 20px">
+                                                            </div>
+                                                            <div class="layui-col-md12">
+                                                                <p>左</p>
+                                                                <div mc-style-dw="px" name="padding-left" class="magicalcoder-slider" mc-attr-tips="true" mc-attr-input="true" mc-attr-min="0" mc-attr-max="2000"></div>
+                                                                <i class="layui-icon layui-icon-set-sm icon-tmp"></i>
+                                                            </div>
+                                                            <div class="layui-col-md12" style="height: 20px">
+                                                            </div>
+                                                            <div class="layui-col-md12">
+                                                                <p>右</p>
+                                                                <div mc-style-dw="px" name="padding-right" class="magicalcoder-slider" mc-attr-tips="true" mc-attr-input="true" mc-attr-min="0" mc-attr-max="2000"></div>
+                                                                <i class="layui-icon layui-icon-set-sm icon-tmp"></i>
+                                                            </div>
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="top,right,bottom,left">外边距</label>
+                                                    <div class="layui-input-block">
+                                                        <div class="layui-row layui-col-space5">
+                                                            <div class="layui-col-md12">
+                                                                <p>上</p>
+                                                                <div mc-style-dw="px" name="margin-top" class="magicalcoder-slider" mc-attr-tips="true" mc-attr-input="true" mc-attr-min="-1000" mc-attr-max="1000"></div>
+                                                                <i class="layui-icon layui-icon-set-sm icon-tmp"></i>
+                                                            </div>
+                                                            <div class="layui-col-md12" style="height: 20px">
+                                                            </div>
+                                                            <div class="layui-col-md12">
+                                                                <p>下</p>
+                                                                <div mc-style-dw="px" name="margin-bottom" class="magicalcoder-slider" mc-attr-tips="true" mc-attr-input="true" mc-attr-min="-1000" mc-attr-max="1000"></div>
+                                                                <i class="layui-icon layui-icon-set-sm icon-tmp"></i>
+                                                            </div>
+                                                            <div class="layui-col-md12" style="height: 20px">
+                                                            </div>
+                                                            <div class="layui-col-md12">
+                                                                <p>左</p>
+                                                                <div mc-style-dw="px" name="margin-left" class="magicalcoder-slider" mc-attr-tips="true" mc-attr-input="true" mc-attr-min="-1000" mc-attr-max="1000"></div>
+                                                                <i class="layui-icon layui-icon-set-sm icon-tmp"></i>
+                                                            </div>
+                                                            <div class="layui-col-md12" style="height: 20px">
+                                                            </div>
+                                                            <div class="layui-col-md12">
+                                                                <p>右</p>
+                                                                <div mc-style-dw="px"  name="margin-right" class="magicalcoder-slider" mc-attr-tips="true" mc-attr-input="true" mc-attr-min="-1000" mc-attr-max="1000"></div>
+                                                                <i class="layui-icon layui-icon-set-sm icon-tmp"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="layui-form-item">
+                                                    <hr class="">
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="border-style">边框样式</label>
+                                                    <div class="layui-input-block">
+                                                        <div class="layui-row layui-col-space5">
+                                                            <div class="layui-col-md12">
+                                                                <select lay-filter="magical-coder-filter-mstyle"  name="border-top-style" class=""><option selected="" value="">选择上边框</option><option value="dotted">点状.......</option><option value="dashed">虚线------</option><option value="solid">实线_____</option><option value="double">双线</option><option value="groove">3D 凹槽</option><option value="ridge">3D 垄状</option><option value="inset">3D inset</option><option value="outset">3D outset </option><option value="hidden">无，兼容冲突</option></select>
+                                                            </div>
+                                                            <div class="layui-col-md12">
+                                                                <div class="layui-row layui-col-space5">
+                                                                    <div class="layui-col-md6">
+                                                                        <select lay-filter="magical-coder-filter-mstyle"  name="border-left-style" class=""><option selected="" value="">左边框</option><option value="dotted">点状</option><option value="dashed">虚线</option><option value="solid">实线</option><option value="double">双线</option><option value="groove">3D 凹槽</option><option value="ridge">3D 垄状</option><option value="inset">3D inset</option><option value="outset">3D outset </option><option value="hidden">无，兼容冲突</option></select>
+                                                                    </div>
+                                                                    <div class="layui-col-md6">
+                                                                        <select lay-filter="magical-coder-filter-mstyle"  name="border-right-style" class=""><option selected="" value="">右边框</option><option value="dotted">点状</option><option value="dashed">虚线</option><option value="solid">实线</option><option value="double">双线</option><option value="groove">3D 凹槽</option><option value="ridge">3D 垄状</option><option value="inset">3D inset</option><option value="outset">3D outset </option><option value="hidden">无，兼容冲突</option></select>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="layui-col-md12">
+                                                                <select lay-filter="magical-coder-filter-mstyle"  name="border-bottom-style" class=""><option selected="" value="">选择下边框</option><option value="dotted">点状</option><option value="dashed">虚线</option><option value="solid">实线</option><option value="double">双线</option><option value="groove">3D 凹槽</option><option value="ridge">3D 垄状</option><option value="inset">3D inset</option><option value="outset">3D outset </option><option value="hidden">无，兼容冲突</option></select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="top,right,bottom,left">边框宽度</label>
+                                                    <div class="layui-input-block">
+                                                        <div class="layui-row layui-col-space5">
+                                                            <div class="layui-col-md12">
+                                                                <p>上</p>
+                                                                <div mc-style-dw="px" name="border-top-width" class="magicalcoder-slider" mc-attr-tips="true" mc-attr-input="true" mc-attr-min="0" mc-attr-max="30"></div>
+                                                                <i class="layui-icon layui-icon-set-sm icon-tmp"></i>
+                                                            </div>
+                                                            <div class="layui-col-md12" style="height: 20px">
+                                                            </div>
+                                                            <div class="layui-col-md12">
+                                                                <p>下</p>
+                                                                <div mc-style-dw="px" name="border-bottom-width" class="magicalcoder-slider" mc-attr-tips="true" mc-attr-input="true" mc-attr-min="0" mc-attr-max="30"></div>
+                                                                <i class="layui-icon layui-icon-set-sm icon-tmp"></i>
+                                                            </div>
+                                                            <div class="layui-col-md12" style="height: 20px">
+                                                            </div>
+                                                            <div class="layui-col-md12">
+                                                                <p>左</p>
+                                                                <div mc-style-dw="px" name="border-left-width" class="magicalcoder-slider" mc-attr-tips="true" mc-attr-input="true" mc-attr-min="0" mc-attr-max="30"></div>
+                                                                <i class="layui-icon layui-icon-set-sm icon-tmp"></i>
+                                                            </div>
+                                                            <div class="layui-col-md12" style="height: 20px">
+                                                            </div>
+                                                            <div class="layui-col-md12">
+                                                                <p>右</p>
+                                                                <div mc-style-dw="px" name="border-right-width" class="magicalcoder-slider" mc-attr-tips="true" mc-attr-input="true" mc-attr-min="0" mc-attr-max="30"></div>
+                                                                <i class="layui-icon layui-icon-set-sm icon-tmp"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="border-color">边框颜色</label><div class="layui-input-block">
+                                                    <div class="layui-row layui-col-space5">
+                                                        <div class="layui-col-md12 layui-col-xs12">
+                                                            <div class="magicalcoder-color-picker layui-inline" style="margin-left: 40px;" mc-attr-predefine="true" mc-attr-alpha="true" name="border-top-color" title="border-top-color"></div>
+                                                        </div>
+                                                        <div class="layui-col-md12 layui-col-xs12">
+                                                            <div class="layui-row layui-col-space5">
+                                                                <div class="layui-col-md6 layui-col-xs6">
+                                                                    <div class="magicalcoder-color-picker layui-inline" mc-attr-predefine="true" mc-attr-alpha="true" name="border-left-color" title="border-left-color"></div>
+                                                                </div>
+                                                                <div class="layui-col-md6 layui-col-xs6">
+                                                                    <div class="magicalcoder-color-picker layui-inline" mc-attr-alpha="true" mc-attr-predefine="true" name="border-right-color" title="border-right-color"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="layui-col-md12 layui-col-xs12">
+                                                            <div class="magicalcoder-color-picker layui-inline" style="margin-left: 40px;" mc-attr-alpha="true" mc-attr-predefine="true" title="border-bottom-color" name="border-bottom-color"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <div class="layui-tab-item">
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="background-color">背景颜色</label>
+                                                    <div class="layui-input-block">
+                                                        <div class="magicalcoder-color-picker layui-inline" mc-attr-predefine="true" name="background-color" mc-attr-alpha="true"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="background-repeat">背景重复</label><div class="layui-input-block">
+                                                    <select lay-filter="magical-coder-filter-mstyle"  name="background-repeat" class=""><option selected="" value="">请选择</option><option value="repeat-x">水平重复</option><option value="repeat-y">垂直重复</option><option value="no-repeat">无</option></select>
+                                                </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="background-position">背景定位</label><div class="layui-input-block">
+                                                    <select lay-filter="magical-coder-filter-mstyle"  name="background-position" class=""><option selected="" value="">请选择</option><option value="center center">居中</option><option value="left top">靠上靠左</option><option value="center top">靠上居中</option><option value="right top">靠下靠右</option><option value="left center">靠左居中</option><option value="right center">靠右居中</option><option value="left bottom">靠下靠左</option><option value="center bottom">靠下居中</option><option value="right bottom">靠下靠右</option></select>
+                                                </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="background-attachment">背景连动</label><div class="layui-input-block">
+                                                    <select lay-filter="magical-coder-filter-mstyle"  name="background-attachment" class=""><option selected="" value="">请选择</option><option value="scroll">跟随滚动</option><option value="fixed">固定</option></select>
+                                                </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <hr class="">
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="opacity">透明度</label><div class="layui-input-block">
+                                                    <select lay-filter="magical-coder-filter-mstyle"  name="opacity" class=""><option selected="" value="">请选择</option><option value="0.1">0.1</option><option value="0.2">0.2</option><option value="0.3">0.3</option><option value="0.4">0.4</option><option value="0.5">0.5</option><option value="0.6">0.6</option><option value="0.7">0.7</option><option value="0.8">0.8</option><option value="0.9">0.9</option><option value="1">1</option></select>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <label class="layui-form-label" title="line-height">层级关系</label><div class="layui-input-block">
+                                                    <div mc-style-dw="" name="z-index" class="magicalcoder-slider" mc-attr-tips="true" mc-attr-input="true" mc-attr-min="0" mc-attr-max="99999"></div>
+                                                    <i class="layui-icon layui-icon-set-sm icon-tmp"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <!--ace 区域-->
+                            <div id="aceHelperHideDiv" class="magicalcoder-hide" style="font-size: 15px;width:100%;height: 100%">
+                            </div>
+                        </div>
+                    </footer>
+                </section>
+            </div>
+            <div class="layui-col-xs2 magicalcoder-hide-right-area">
+                <!--右侧 做个能收展的-->
+                <aside class="el-aside magicalcoder-page-right-config-container">
+                    <section class="el-container is-vertical layui-form" id="magicalcoder_right_side" lay-filter="rightConfigForm">
+                        <header class="el-header" style="height: 45px;"></header>
+                        <main class="el-main config-content demo-right-config"></main>
+                    </section>
+                </aside>
+            </div>
+        </div>
+        <!--左右隐藏-->
+        <!--<div class="magicalcoder-hide-left"><i class="layui-icon layui-icon-prev"></i></div>-->
+        <div class="magicalcoder-hide-right"><i class="layui-icon layui-icon-next"></i></div>
+    </div>
+</div>
+    <script type="text/javascript" src="assets/drag/js/lib/redips/redips-table-source.js"></script>
+    <script type="text/javascript" src="assets/drag/js/min/magicalcoder-jsg.js"></script>
+    <!--[if IE 9]>
+    <script type="text/javascript">
+        alert("亲爱的用户，IE9无法使用拖拽操作，但是您可以通过点击左侧控件来加入工作区间，然后通过复制粘贴等快捷键来操作。推荐使用Chrome获取最佳体验")
+    </script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script type="text/javascript">
+        alert("亲爱的用户，IE8及之前版本现已被互联网大部分网站抛弃，我们不再兼容。推荐使用Chrome获取最佳体验")
+    </script>
+    <![endif]-->
+    <script type="text/javascript" src="assets/drag/js/min/magicalcoder-sn.js"></script>
+
+    <!--ace开源编辑器-->
+    <script src="assets/drag/js/lib/ace-1.4.3/ace.js"></script>
+    <script src="assets/drag/js/lib/ace-1.4.3/ext-beautify.js"></script>
+    <script src="assets/drag/js/lib/ace-1.4.3/ext-elastic_tabstops_lite.js"></script>
+    <!--这个千万别引入啊 一旦引入 tab失效-->
+    <!--<script src="assets/drag/js/lib/ace-1.4.3/ext-emmet.js"></script>-->
+    <script src="assets/drag/js/lib/ace-1.4.3/ext-error_marker.js"></script>
+    <script src="assets/drag/js/lib/ace-1.4.3/ext-keybinding_menu.js"></script>
+    <script src="assets/drag/js/lib/ace-1.4.3/ext-modelist.js"></script>
+    <script src="assets/drag/js/lib/ace-1.4.3/ext-static_highlight.js"></script>
+    <script src="assets/drag/js/lib/ace-1.4.3/ext-searchbox.js"></script>
+    <script src="assets/drag/js/lib/ace-1.4.3/ext-language_tools.js"></script>
+    <script src="assets/drag/js/lib/ace-1.4.3/mode-html.js"></script>
+    <script src="assets/drag/js/lib/ace-1.4.3/worker-html.js"></script>
+    <script src="assets/drag/js/lib/ace-1.4.3/mode-css.js"></script>
+    <script src="assets/drag/js/lib/ace-1.4.3/worker-css.js"></script>
+    <script src="assets/drag/js/lib/ace-1.4.3/mode-javascript.js"></script>
+    <script src="assets/drag/js/lib/ace-1.4.3/worker-javascript.js"></script>
+    <script src="assets/drag/js/lib/ace-1.4.3/theme-monokai.js"></script>
+
+    <script type="text/javascript" src="assets/drag/js/lib/htmlformat.js"></script>
+    <script type='text/javascript' src="assets/drag/layui-v2.4.5/layui/layui.all.js"></script>
+    <!--dom树-->
+    <script type="text/javascript" src="assets/drag/js/lib/ztree3/js/jquery.ztree.all.js"></script>
+
+    <!--user相关代码-->
+    <script type="text/javascript" src="assets/drag/js/user/application-env.js"></script>
+    <script type="text/javascript" src="assets/drag/js/user/key.js"></script>
+    <script type="text/javascript" src="assets/drag/js/user/api.js"></script>
+    <script type="text/javascript" src="assets/drag/js/user/callback.js"></script>
+    <script type="text/javascript" src="assets/drag/js/user/my-callback.js"></script>
+    <script type="text/javascript" src="assets/drag/js/user/ui/layui/2.5.4/constant.js"></script>
+    <script type="text/javascript" src="assets/drag/js/user/api-demo.js"></script>
+
+    <script type="text/javascript" src="assets/drag/js/min/magical-coder-drag-all.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+[
+    { "id": "usa", "text": "美国", continent: "北美洲" },
+    { "id": "cn", "text": "中国", continent: "亚洲" },
+    { "id": "jp", "text": "日本", continent: "亚洲" },
+    { "id": "en", "text": "英国", continent: "欧洲" },
+    { "id": "de", "text": "德国", continent: "欧洲" },
+    { "id": "fr", "text": "法国", continent: "欧洲" },
+	{ "id": "ca", "text": "加拿大",continent: "北美洲" },
+	{ "id": "at", "text": "奥地利",continent: "欧洲" },
+	{ "id": "ch", "text": "瑞士", continent: "欧洲" }
+]

@@ -1,0 +1,36 @@
+/*扩展一个白色背景样式*/
+.layui-bg-white{
+    background-color: #FFF !important;
+}
+/*扩展的新容器面板*/
+.magical-coder-layui-absolute-pane{
+    height: 800px;
+    position: relative;
+}
+
+/*不能出现带margin-left margin-top*/
+.magical-coder-layui-absolute-pane>.layui-btn{
+    margin-left:0px;
+}
+/*大部分控件拖拽到这里会变得很奇怪 所以这里给最小值*/
+.magical-coder-layui-absolute-pane>form,
+.magical-coder-layui-absolute-pane>table,
+.magical-coder-layui-absolute-pane>fieldset,
+.magical-coder-layui-absolute-pane>blockquote,
+.magical-coder-layui-absolute-pane>img,
+.magical-coder-layui-absolute-pane>div,
+.magical-coder-layui-absolute-pane>input,
+.magical-coder-layui-absolute-pane>ul,
+.magical-coder-layui-absolute-pane>ol,
+.magical-coder-layui-absolute-pane>textarea{
+    width: 400px;
+}
+.magical-coder-layui-absolute-pane>span{
+    width: 150px;
+}
+.magical-coder-layui-absolute-pane>.magicalcoder-color-picker{
+    width: 46px;
+}
+.magical-coder-layui-absolute-pane>.layui-form-mid{
+    width: 4px;
+}

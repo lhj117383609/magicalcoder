@@ -1,0 +1,24 @@
+{
+    "code":0,
+    "data":
+        [
+            {
+                "id":1,
+                "name":"MagicalDrag",
+                "description":"专注于前端可视化编程，降低开发门槛，加快开发速度"
+            },
+            {
+                "id":2,
+                "name":"MagicalCoder",
+                "description":"专注于后端可视化编程，一键生成管理后台增删改查"
+            },
+            {
+                "id":3,
+                "name":"YouyaBoot",
+                "description":"我们的一款开源框架，基于SpringBoot2.x版本，MagicalCoder生成的代码可以直接在此处运行"
+            }
+        ],
+    "count":3,
+    "msg":"成功"
+
+}

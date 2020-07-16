@@ -1,0 +1,222 @@
+@charset "utf-8";
+div:before,div:after{
+    color: #4551ff;
+    font-weight: bold;
+}
+.magicalcoder-dragging .layui-inline{
+    min-width: 80px;
+}
+
+.mc-if-container:before{
+    content: '条件分支';
+}
+
+.mc-if:before{
+    content: '如果';
+}
+
+.mc-else-if:before{
+    content: '或者如果';
+}
+
+.mc-else:before{
+    content: '其他情况';
+}
+
+.mc-condition-groups:before{
+    content: '满足';
+}
+.mc-condition-groups:after{
+    content: '';
+}
+.mc-if-execute:before{
+    content: '则执行{';
+}
+.mc-if-execute:after{
+    content: '}';
+    display: block;
+}
+.mc-block:before{
+    content: '则执行{';
+}
+.mc-block:after{
+    content: '}';
+    display: block;
+}
+.magicalcoder-dragging .drag-mc-pane{
+    min-height: 5px;
+}
+
+.mc-var:before{
+    content: 'var ';
+}
+.mc-var:after,.mc-line:after{
+    content: '';
+}
+
+.mc-defined:before{
+    content: '定义新变量 ';
+}
+.mc-set:before{
+    content: '赋值 ';
+}
+
+.mc-set-variable{
+    color: #307AFF;
+}
+.mc-constant{
+    color:green ;
+}
+.mc-set-variable,.mc-page-field,.mc-constant,.mc-set-to,.mc-compare-operator,.mc-math-operator,.mc-logic-and,.mc-logic-or,.mc-logic-not{
+    margin-left:6px;
+    margin-right: 6px;
+}
+
+.mc-ajax:before{
+    content: "调用数据仓库";
+}
+.mc-ajax-method:before{
+    content: "请求方法";
+}
+.mc-ajax-params:before{
+    content: "参数集合";
+}
+.mc-ajax-param:before{
+    content: "参数";
+}
+.mc-ajax-thens:before{
+    content: "处理返回(_res)";
+}
+.mc-ajax-then-translates:before{
+    content: "预处理字段集";
+}
+.mc-ajax-then:before{
+    content: "一组赋值";
+}
+.mc-ajax-then:after{
+    content: ";";
+}
+.mc-ajax-then .mc-ajax-then-page-field-not-array{
+    display: inline-block;
+    width: 45%;
+}
+.mc-ajax-then .mc-ajax-then-page-field-array{
+    display: inline-block;
+    width: 45%;
+}
+.mc-ajax-then .mc-ajax-then-page-field-page-total{
+    display: inline-block;
+    width: 45%;
+}
+.mc-ajax-then .mc-ajax-then-return-name{
+    display: inline-block;
+    width: 45%;
+}
+.mc-ajax-param .mc-ajax-param-name{
+    display: inline-block;
+    width: 40%;
+}
+.mc-ajax-param .mc-ajax-param-value,
+.mc-ajax-param .mc-find-page-limit,
+.mc-ajax-param .mc-find-page-num,
+.mc-ajax-param .mc-find-page-total-count
+{
+    display: inline-block;
+    width: 50%;
+}
+
+.mc-method-base:before{
+    content: '方法基础信息';
+}
+.mc-method-base-method-name{
+    display: inline-block;
+    width: 30%;
+}
+.mc-method-base-method-description{
+    display: inline-block;
+    width: 60%;
+}
+
+
+.mc-util-alert:before{
+    content: '弹窗警告(';
+}
+.mc-util-alert:after{
+    content: ');';
+}
+
+/*页面跳转*/
+.mc-href:before{
+    content: '页面跳转';
+}
+.mc-href-params:before{
+     content: '参数集合';
+}
+.mc-href-param:before{
+     content: '参数';
+}
+.mc-href-param .mc-href-param-name{
+    display: inline-block;
+    width: 50%;
+}
+.mc-href-param .mc-href-param-value{
+    display: inline-block;
+    width: 45%;
+}
+
+
+.mc-math:before{
+    content: "(";
+}
+.mc-math:after{
+    content: ")";
+}
+
+.mc-condition-group:before{
+    content: "(";
+}
+.mc-condition-group:after{
+    content: ")";
+}
+
+/*工具类*/
+.mc-util-parse-int:before{
+    content: '转成整数(';
+}
+.mc-util-parse-int:after{
+    content: ')';
+}
+.mc-util-parse-float:before{
+    content: '转成小数(';
+}
+.mc-util-parse-float:after{
+    content: ')';
+}
+
+.mc-util-reload:before{
+    content: '页面刷新';
+}
+
+.mc-kuo-pair:before{
+    content: "(";
+}
+.mc-kuo-pair:after{
+    content: ")";
+}
+
+/*方法*/
+.mc-function:before{
+    content:"function";
+}
+.mc-function-params:before{
+    content:"(";
+}
+.mc-function-params:after{
+    content:")";
+}
+.mc-function-body:before{
+    content: "{";
+}
+.mc-function-body:after{
+    content: "}";
+}

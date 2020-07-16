@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--本软件版权归www.magicalcoder.com所有，著作权人：何栋宇，qq:799374340;如果您觉得好，欢迎购买我们的专业离线版，支持互联网创业，支持原创，在国内营造一个良性的知识付费氛围，大家都是受益者，一次购买永久免费升级。-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <title>MagicalCoder的可视化拖拽布局器预览</title>
+    <meta name="description" content="MagicalCoder,表单布局器,基于jquery,Vue的可视化拖拽布局器">
+    <meta name="keywords" content="MagicalCoder,表单布局器,基于jquery,Vue的可视化拖拽布局器">
+    <!--这是一段从浏览器缓存恢复html js的方法-->
+    <script type="text/javascript" src="assets/drag/js/lib/json3.js"></script>
+    <script type="text/javascript" src="assets/drag/js/lib/jscore.js"></script>
+    <style type="text/css">
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+    <script type="text/javascript">
+        function Util(){}
+        Util.prototype.daoUtil = function(){
+            var supportSessionStorage =  typeof window.sessionStorage=='object';
+            var obj = {
+                serializeValueToObj:function(value){
+                    if(value){
+                        if(value.startsWith("{")||value.startsWith("[")){
+                            return JSON.parse(value);
+                        }
+                    }
+                    return value;
+                },
+                sessionGetItem:function (key) {
+                    if(supportSessionStorage){
+                        return this.serializeValueToObj(window.sessionStorage.getItem(key));
+                    }
+                    return null;
+                }
+            }
+            return obj;
+        }
+    </script>
+    <script  type="text/javascript">
+        var util = new Util();
+        var cache = util.daoUtil().sessionGetItem("magicalCoderViewPage");
+        {
+            var jsCss = [];
+            for(var i=0;i<cache.view.link.length;i++){
+                jsCss.push('<link href='+cache.view.link[i]+' rel="stylesheet" type="text/css" />');
+            }
+            for(var i=0;i<cache.view.headJs.length;i++){
+                jsCss.push('<script src="' + cache.view.headJs[i] + '" type="text/javascript"></sc' + 'ript>');
+            }
+            document.write(jsCss.join(''))
+        }
+    </script>
+    <style id="magicalCoderCss"></style>
+</head>
+<body id="iframeBody">
+<script>
+    var util = new Util();
+    var cache = util.daoUtil().sessionGetItem("magicalCoderViewPage");
+    {
+        var bodyJsArr = [];
+        for(var i=0;i<cache.view.bodyJs.length;i++){
+            bodyJsArr.push('<script src="' + cache.view.bodyJs[i] + '" type="text/javascript"></sc' + 'ript>');
+        }
+        bodyJsArr.push('<script src="assets/drag/js/user/ui/view.js" type="text/javascript"></sc' + 'ript>');
+        document.write(bodyJsArr.join(''))
+    }
+    {//追加样式
+        if(cache.css){
+            document.getElementById("magicalCoderCss").innerHTML=cache.css;
+        }
+    }
+    {//追加magicalDragScene样式
+        if(cache.canvasStyle){
+            //设置样式
+            var style = [];
+            for(var key in cache.canvasStyle){
+                style.push(key+":"+cache.canvasStyle[key]);
+            }
+            document.body.setAttribute("style",style.join(";"));
+        }
+    }
+</script>
+</body>
+
+</html>

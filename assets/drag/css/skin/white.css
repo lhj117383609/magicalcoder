@@ -1,0 +1,156 @@
+
+/*body基本色*/
+.mc-skin-white {
+    background-color: #fff;
+    color: #000;
+    /*以下是IE滚动条*/
+    /*三角箭头的颜色*/
+    scrollbar-arrow-color: #4E565D;
+    /*滚动条滑块按钮的颜色*/
+    scrollbar-face-color: #4E565D;
+    /*滚动条阴影*/
+    scrollbar-shadow-color: white;
+    /*滚动条轨道颜色*/
+    scrollbar-track-color: white;
+}
+/*其他浏览器滚动条颜色*/
+.mc-skin-white ::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+    background-color: #6c6f71;
+    border-radius: 3px;
+}
+/*定义chrome滚动条样式*/
+.mc-skin-white ::-webkit-scrollbar {/*滚动条整体样式*/
+    width: 6px;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 6px;
+    background-color: #4E565D;
+}
+.mc-skin-white ::-webkit-scrollbar-track {/*滚动条里面轨道 根据背景色自适应*/
+    border-radius: 3px;
+}
+/*顶部头部*/
+.mc-skin-white .magicalcoder-page-header {
+    background-color: white;
+}
+/*左右侧基准色*/
+.mc-skin-white .el-aside {
+    background-color:white;
+    border-top-color: #484C52;
+}
+/*左侧-拖拽源边框色 文本颜色*/
+.mc-skin-white .magicalcoder-page-drag-item-list .magicalcoder-page-drag-item-label>a {
+    border: 1px solid #33383E;
+    color: #ffffe6 !important;
+}
+/*左侧-拖拽源底色*/
+.mc-skin-white .magicalcoder-page-drag-item-list .magicalcoder-page-drag-item-label {
+    background-color: #33383E;
+    border: 1px solid #33383E
+}
+/*===============工作台==============*/
+.mc-skin-white .magicalcoder-workground{
+    background: white;
+}
+/*界面种出现的输入框 下拉框 文本框等底色*/
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-textarea,
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-input,
+.mc-skin-white.magicalcoder-edit .magicalcoder-page-header .layui-textarea,
+.mc-skin-white.magicalcoder-edit .magicalcoder-page-header .layui-input{
+    background: #33383E;
+    border: 1px solid white;
+    color: #ffffe6;
+}
+
+/*重定义layui在界面上出现的控件的基础颜色 北背景色 禁用色等*/
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-form-label{
+    color: #66696D;
+}
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-input:hover,
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-textarea:hover,
+.mc-skin-white.magicalcoder-edit .magicalcoder-page-header .layui-input:hover,
+.mc-skin-white.magicalcoder-edit .magicalcoder-page-header .layui-textarea:hover{
+    border-color: white !important;
+}
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-input:active,
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-textarea:active,
+.mc-skin-white.magicalcoder-edit .magicalcoder-page-header .layui-input:active,
+.mc-skin-white.magicalcoder-edit .magicalcoder-page-header .layui-textarea:active
+{
+    border-color: white !important;;
+}
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-input:focus,
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-textarea:focus,
+.mc-skin-white.magicalcoder-edit .magicalcoder-page-header .layui-input:focus,
+.mc-skin-white.magicalcoder-edit .magicalcoder-page-header .layui-textarea:focus
+{
+    border-color: white !important;;
+}
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-form-select dl,
+.mc-skin-white.magicalcoder-edit .magicalcoder-page-header .layui-form-select dl
+{
+    background-color: #33383E;
+    border: 1px solid white;
+    color:#ffffe6;
+}
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-form-select dl dd:hover,
+.mc-skin-white.magicalcoder-edit .magicalcoder-page-header .layui-form-select dl dd:hover
+{
+    background-color:#3F454E;
+}
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-form-select dl dd.layui-this,
+.mc-skin-white.magicalcoder-edit .magicalcoder-page-header .layui-form-select dl dd.layui-this
+{
+    background-color:#307AFF;
+    color: #ffffe6;
+}
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-select-disabled .layui-disabled,
+.mc-skin-white.magicalcoder-edit .magicalcoder-page-header .layui-select-disabled .layui-disabled
+{
+    border-color:white !important;
+}
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-timeline-item:before,
+.mc-skin-white.magicalcoder-edit .demo-right-config hr{
+    background-color:white;
+}
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-form-switch{
+    background-color:white;
+    border: 1px solid white;
+}
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-form-onswitch{
+    background-color:#307AFF;
+    border: 1px solid #307AFF;
+}
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-form-switch em{
+    color:#ffffe6 !important;
+}
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-btn{
+    background-color: #307AFF;
+}
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-form-checked span,
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-form-checked:hover span{
+    background-color: #307AFF;
+}
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-form-checked i,
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-form-checked:hover i{
+    color: #307AFF;
+}
+/*右侧属性模块*/
+.mc-skin-white .magicalcoder-page-right-config-container .config-tab {
+    background: #33383E;
+    color:#ffffe6;
+}
+/*鼠标悬停属性顶部tab标签颜色*/
+.mc-skin-white .magicalcoder-page-right-config-container .config-tab:hover{
+    background: white;
+}
+/*右键菜单*/
+.mc-skin-white.magicalcoder-edit .right-menu{
+    border:1px solid #DDDDDD;
+    box-shadow:0 2px 4px white;
+    background-color:#33383E;
+}
+.mc-skin-white.magicalcoder-edit .right-menu li:hover{
+    background-color:#3F454E;
+}
+.mc-skin-white.magicalcoder-edit .right-menu a{
+    color:#ffffe6 !important;
+}

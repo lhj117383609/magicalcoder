@@ -1,0 +1,1319 @@
+
+
+.el-radio,.el-radio--medium.is-bordered .el-radio__label {
+    font-size: 14px
+}
+
+.el-radio {
+    color: #606266;
+    font-weight: 500;
+    line-height: 1;
+    cursor: pointer;
+    white-space: nowrap;
+    outline: 0
+}
+
+
+.el-radio+.el-radio {
+    margin-left: 30px
+}
+
+
+.el-radio-button__inner,.el-switch__core {
+    -webkit-box-sizing: border-box;
+    vertical-align: middle
+}
+
+
+.el-radio-button,.el-radio-button__inner {
+    display: inline-block;
+    position: relative;
+    outline: 0
+}
+
+.el-radio:focus:not(.is-focus):not(:active):not(.is-disabled) .el-radio__inner {
+    -webkit-box-shadow: 0 0 2px 2px #307aff;
+    box-shadow: 0 0 2px 2px #307aff
+}
+
+
+.el-radio-group {
+    display: inline-block;
+    line-height: 1;
+    vertical-align: middle;
+    font-size: 0
+}
+
+.el-radio-button__inner {
+    line-height: 1;
+    white-space: nowrap;
+    background: #fff;
+    border: 1px solid #dcdfe6;
+    font-weight: 500;
+    border-left: 0;
+    color: #606266;
+    -webkit-appearance: none;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    cursor: pointer;
+    -webkit-transition: all .3s cubic-bezier(.645,.045,.355,1);
+    transition: all .3s cubic-bezier(.645,.045,.355,1);
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 0
+}
+.el-radio-button__inner:hover {
+    color: #307aff
+}
+/*组件*/
+/*多路开关*/
+.el-radio-group-label-active {
+    color: #fff;
+    background-color: #307AFF;
+    border-color: #307AFF;
+    -webkit-box-shadow: -1px 0 0 0 #307AFF;
+    box-shadow: -1px 0 0 0 #307AFF
+}
+.el-radio-group-label-active:hover {
+    color: #fff;
+}
+
+.el-radio-button__inner [class*=el-icon-] {
+    line-height: .9
+}
+
+.el-radio-button__inner [class*=el-icon-]+span {
+    margin-left: 5px
+}
+
+.el-radio-button:first-child .el-radio-button__inner {
+    border-left: 1px solid #dcdfe6;
+    border-radius: 4px 0 0 4px;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important
+}
+
+
+.el-radio-button:last-child .el-radio-button__inner {
+    border-radius: 0 4px 4px 0
+}
+
+.el-radio-button--small .el-radio-button__inner {
+    padding: 9px 15px;
+    font-size: 12px;
+    border-radius: 0
+}
+
+.el-radio-button--small .el-radio-button__inner.is-round {
+    padding: 9px 15px
+}
+
+.el-radio-button:focus:not(.is-focus):not(:active):not(.is-disabled) {
+    -webkit-box-shadow: 0 0 2px 2px #307aff;
+    box-shadow: 0 0 2px 2px #307aff
+}
+
+.el-button {
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid #dcdfe6;
+    color: #606266;
+    -webkit-appearance: none;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: 0;
+    margin: 0;
+    -webkit-transition: .1s;
+    transition: .1s;
+    font-weight: 500;
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 4px
+}
+
+.el-button+.el-button {
+    margin-left: 10px
+}
+
+.el-button:hover {
+    color: #307aff;
+    border-color: #c6e2ff;
+    background-color: #ecf5ff
+}
+
+.el-button:active {
+    color: #307aff;
+    border-color: #307aff;
+    outline: 0
+}
+
+.el-button::-moz-focus-inner {
+    border: 0
+}
+
+.el-button [class*=el-icon-]+span {
+    margin-left: 5px
+}
+
+
+.el-button--text,.el-button--text.is-disabled,.el-button--text.is-disabled:focus,.el-button--text.is-disabled:hover,.el-button--text:active {
+    border-color: transparent
+}
+
+.el-button--medium {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 4px
+}
+
+
+.el-button--text {
+    /*color: #307aff;*/
+    background: 0 0;
+    padding-left: 0;
+    padding-right: 0
+}
+
+.el-button--text:hover {
+    color: #307aff;
+    border-color: transparent;
+    background-color: transparent
+}
+
+.el-button--text:active {
+    color: #307aff;
+    background-color: transparent
+}
+
+.el-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    -ms-flex-preferred-size: auto;
+    flex-basis: auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    min-width: 0
+}
+
+.el-container.is-vertical {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
+}
+
+.el-header {
+    padding: 0 20px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -ms-flex-negative: 0;
+    flex-shrink: 0
+}
+
+.el-aside,.el-main {
+    overflow: auto;
+    -webkit-box-sizing: border-box
+}
+
+.el-aside {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    border-top-style: solid;
+    border-top-width: 1px;
+}
+
+.el-aside,.el-main {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.el-main {
+    display: block;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    -ms-flex-preferred-size: auto;
+    flex-basis: auto;
+    padding: 20px
+}
+
+.el-footer {
+    padding: 0 20px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -ms-flex-negative: 0;
+    flex-shrink: 0
+}
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%
+}
+
+body {
+    margin: 0
+}
+
+h1 {
+    font-size: 2em;
+    margin: .67em 0
+}
+
+hr {
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible
+}
+
+pre {
+    font-family: monospace,monospace;
+    font-size: 1em
+}
+
+a {
+    background-color: transparent
+}
+
+abbr[title] {
+    border-bottom: none;
+    text-decoration: underline;
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted
+}
+
+b,strong {
+    font-weight: bolder
+}
+
+code,kbd,samp {
+    font-family: monospace,monospace;
+    font-size: 1em
+}
+
+small {
+    font-size: 80%
+}
+
+sub,sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+sub {
+    bottom: -.25em
+}
+
+sup {
+    top: -.5em
+}
+
+img {
+    border-style: none
+}
+
+button,input,optgroup,select,textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0
+}
+
+button,input {
+    overflow: visible
+}
+
+button,select {
+    text-transform: none
+}[type=button],[type=reset],[type=submit],button {
+     -webkit-appearance: button
+ }[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner {
+      border-style: none;
+      padding: 0
+  }[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring {
+       outline: 1px dotted ButtonText
+   }
+
+fieldset {
+    padding: .35em .75em .625em
+}
+
+legend {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    padding: 0;
+    white-space: normal
+}
+
+progress {
+    vertical-align: baseline
+}
+
+textarea {
+    overflow: auto
+}[type=checkbox],[type=radio] {
+     -webkit-box-sizing: border-box;
+     box-sizing: border-box;
+     padding: 0
+ }[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button {
+      height: auto
+  }[type=search] {
+       -webkit-appearance: textfield;
+       outline-offset: -2px
+   }[type=search]::-webkit-search-decoration {
+        -webkit-appearance: none
+    }
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit
+}
+
+details {
+    display: block
+}
+
+summary {
+    display: list-item
+}[hidden],template {
+     display: none
+ }
+
+
+
+
+
+
+
+
+#magicalcoder-page-main,body,html {
+    height: 100%
+}
+
+#magicalcoder-page-main {
+    font-family: Avenir,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+    min-height: 100%
+}
+
+.magicalcoder-page-header {
+    height: 50px;
+    padding: 0 10px;
+    position: relative;
+}
+
+.magicalcoder-page-header .magicalcoder-page-logo {
+    height: 26px;
+    vertical-align: middle
+}
+
+.magicalcoder-page-header .magicalcoder-page-title {
+    display: inline-block;
+    line-height: 50px;
+    vertical-align: middle;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    opacity: .8;
+    margin-left: 6px
+}
+
+.magicalcoder-page-header .magicalcoder-page-link {
+    padding-top:6px;
+    float: right;
+    margin-right: 30px;
+}
+.magicalcoder-page-header .magicalcoder-page-link a {
+    color: #ffffe6;
+    text-decoration: none;
+    /*line-height: 50px;*/
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 10px
+}
+
+.magicalcoder-page-header .magicalcoder-page-link a:hover {
+    opacity: .8
+}
+
+.magicalcoder-page-container {
+    height: calc(100% - 50px)
+}
+
+@font-face {
+    font-family:tinymce;src:url(../fonts/tinymce.64012277.eot);src:url(../fonts/tinymce.64012277.eot?#iefix) format("embedded-opentype"),url(../fonts/tinymce.9267f79b.woff) format("woff"),url(../fonts/tinymce.f8d29256.ttf) format("truetype"),url(../img/tinymce.b84225c5.svg#tinymce) format("svg");font-weight:400;font-style:normal
+}
+
+@font-face {
+    font-family:tinymce-small;src:url(../fonts/tinymce-small.12d26c28.eot);src:url(../fonts/tinymce-small.12d26c28.eot?#iefix) format("embedded-opentype"),url(../fonts/tinymce-small.7e0c88f0.woff) format("woff"),url(../fonts/tinymce-small.28806940.ttf) format("truetype"),url(../img/tinymce-small.a2a1f732.svg#tinymce) format("svg");font-weight:400;font-style:normal
+}
+/*------------*/
+body {
+    line-height: 1.3;
+}
+
+body,td,th {
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 14px
+}
+
+.el-container {
+    height: 100%!important
+}
+
+.el-radio+.el-radio {
+    margin-left: 0!important
+}
+
+.el-radio {
+    margin-right: 30px
+}
+
+.el-checkbox+.el-checkbox {
+    margin-left: 0!important
+}
+
+.el-checkbox {
+    margin-right: 30px
+}
+
+.el-form-item--small .el-radio {
+    line-height: 32px!important
+}
+
+.el-form-item--mini .el-radio {
+    line-height: 28px!important
+}
+
+.el-form-item--medium .el-radio {
+    line-height: 36px!important
+}
+
+.center-container {
+    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0
+}
+
+.center-container .btn-bar {
+    min-height: 45px;
+    line-height: 45px;
+    font-size: 18px;
+    border-bottom: 2px solid #e4e7ed;
+    text-align: right
+}
+
+.center-container .el-main {
+    padding: 0;
+    position: relative
+}
+
+/*头部操作条*/
+.el-container .el-header{
+    padding: 0 2px;
+}
+.el-container .el-header .el-radio-group{
+    float:left;
+    margin-top: 6px;
+    text-align: left;
+}
+.el-radio{
+    color:red;
+}
+
+.magicalcoder-page-drag-item-list {
+    padding: 8px 0;
+    width: 100%;
+    height: 100%
+}
+
+.magicalcoder-page-drag-item-list .widget-cate {
+    padding: 8px 12px;
+    /*font-size: 14px;
+    color: #66696D;*/
+
+    font-family: FZLTZHK--GBK1-0;
+    font-size: 14px;
+    color: #66696D;
+    letter-spacing: 0;
+    line-height: 14px;
+}
+
+.magicalcoder-page-drag-item-list ul {
+    position: relative;
+    overflow: hidden;
+    padding: 0 10px 10px;
+    margin: 0
+}
+
+
+.magicalcoder-page-drag-item-list .magicalcoder-page-drag-item-label {
+    font-size: 12px;
+    display: block;
+    min-width: 86px;
+    max-width: 50%;
+    line-height: 26px;
+    position: relative;
+    float: left;
+    left: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 1%;
+}
+
+/*小图标的不需要那么宽*/
+.magicalcoder-icon-list .magicalcoder-page-drag-item-label {
+    font-size: 12px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 26px;
+    position: relative;
+    float: left;
+    left: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 1%;
+    background-color: #33383E;
+    border: 1px solid #33383E
+}
+
+.magicalcoder-page-drag-item-list .magicalcoder-page-drag-item-label:hover {
+    color: #307aff;
+    border: 1px dashed #307aff
+}
+
+.magicalcoder-page-drag-item-list .magicalcoder-page-drag-item-label>a {
+    display: block;
+    cursor: move;
+    font-family: FZLTHK--GBK1-0;
+    font-size: 12px;
+    letter-spacing: 0;
+}
+
+.magicalcoder-page-drag-item-list .magicalcoder-page-drag-item-label>a .icon {
+    margin-right: 6px;
+    margin-left: 8px;
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.magicalcoder-page-drag-item-list .magicalcoder-page-drag-item-label>a span {
+    display: inline-block;
+    vertical-align: middle
+}
+.magicalcoder-icon-list .magicalcoder-page-drag-item-label>a
+{
+    text-align: center;
+}
+
+.magicalcoder-page-right-config-container {
+    position: relative
+}
+
+.magicalcoder-page-right-config-container .config-tab {
+    font-family: FZLTHK--GBK1-0;
+    letter-spacing: 0;
+    line-height: 14px;
+    height: 45px;
+    line-height: 45px;
+    display: inline-block;
+    /*width: 20.7%;*/
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;.magicalcoder-page-drag-item-list .magicalcoder-page-drag-item-label
+cursor: pointer
+}
+
+.magicalcoder-page-right-config-container .config-tab.active {
+    border-bottom: 2px solid #307aff
+}
+
+.magicalcoder-page-right-config-container .config-content {
+    padding: 10px
+}
+
+.magicalcoder-page-right-config-container .config-content .el-form-item__label {
+    padding: 0;
+    font-weight: 500
+}
+
+.magicalcoder-page-right-config-container .config-content .el-form-item {
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 10px
+}
+
+/*遇到扩展配置的情况 配置下整个行比例*/
+.magicalcoder-page-right-config-container .demo-right-config .layui-form .layui-form-item .layui-input-block .layui-inline:first-child{
+    width: 73%;
+}
+
+.viewer-container {
+    z-index: 99999!important
+}
+
+.widget-empty {
+
+}
+
+.iconfont {
+    vertical-align:middle;
+    margin-bottom: 2px;
+    margin-right: 6px;
+    margin-left: 6px;
+}
+.magicalcoder-page-drag-item-list .iconfont {
+    margin-bottom: 0px;
+}
+/*来个布局*/
+.magicalcoder-d-flex{
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+}
+.magicalcoder-align-items-between{
+    -webkit-box-pack: justify !important;
+    -ms-flex-pack: justify !important;
+    justify-content: space-between !important;
+}
+.magicalcoder-flex-center{
+    -webkit-box-pack: center !important;
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+}
+.magicalcoder-header-tools i{
+    font-weight: 500;
+    font-size: 18px;
+}
+
+/*magicalcoder布局样式*/
+
+/*左侧*/
+.magicalcoder-left-config .magicalcoder-view{
+    display: none;
+}
+
+.magicalcoder-active{
+    color:#307AFF !important;
+}
+/*iframe*/
+#dropInnerIframe{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    border-width:0px;
+}
+
+/*===============工作台==============*/
+.magicalcoder-workground{
+    overflow-x:hidden;
+    text-align:center;/*居中*/
+}
+
+.magicalcoder-demo-code{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+/*简|繁样式*/
+.magicalcoder-edit .center-container .el-header .layui-form .layui-form-switch{
+    margin-top:0px !important;
+    width: 48px;
+}
+.magicalcoder-edit .center-container .el-header .layui-form .layui-form-switch em{
+    top:-2px;
+}
+/*当拖拽的时候，把之前隐藏的元素*/
+.magicalcoder-dragging .magicalcoder-demo .drag-mc-pane{
+    border: 1px solid #c9cadd;
+    padding: 12px;
+    min-width: 5px;
+    min-height: 60px;/*保证内部有高度方便其他控件拖入*/
+    margin-top:5px;
+}
+
+
+/*右键菜单*/
+.magicalcoder-edit .right-menu{
+    display:none;
+    position:fixed;
+    z-index: 2000;
+    width: 150px;
+    line-height:36px;
+    padding:5px 0;
+    margin:10px 0;
+}
+.magicalcoder-edit .right-menu li{
+    padding:0 20px;
+    cursor:pointer;
+}
+.magicalcoder-edit .right-menu a{
+    font-size: 14px;
+}
+.magicalcoder-edit .right-menu a:hover{
+    text-decoration: none;
+}
+
+/*===============工作台 end    ==============*/
+
+.magicalcoder-hide{
+    display: none;
+}
+
+/*右侧*/
+.el-header .config-tab{
+    cursor:pointer;
+}
+/*重写右侧操作区域 layui样式*/
+.magicalcoder-edit .demo-right-config .layui-form-label{
+    text-align: left;
+    padding: 12px 0px 4px 0px;
+    margin-bottom: 6px;
+}
+/*占满一行*/
+.magicalcoder-edit .demo-right-config .layui-form-label-full{
+    width:100%;
+}
+.magicalcoder-edit .demo-right-config .layui-input-block{
+    margin-left:0px;
+}
+.magicalcoder-edit .demo-right-config .tt{
+    margin-left:0px;
+}
+/*采用我们自己的设计*/
+.magicalcoder-edit .demo-right-config .layui-form-label{
+    font-family: FZLTZHK--GBK1-0;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 14px;
+}
+.magicalcoder-edit .demo-right-config .layui-textarea,.magicalcoder-edit .demo-right-config .layui-input,
+.magicalcoder-edit .magicalcoder-page-header .layui-textarea,.magicalcoder-edit .magicalcoder-page-header .layui-input{
+    border-radius: 2px;
+    font-family: FZLTHK--GBK1-0;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 20px;
+}
+/*select*/
+.magicalcoder-edit .demo-right-config .layui-form-select dl,
+.magicalcoder-edit .magicalcoder-page-header .layui-form-select dl
+{
+    border-radius: 2px;
+}
+.magicalcoder-edit .demo-right-config .layui-form-select dl dd:hover,
+.magicalcoder-edit .magicalcoder-page-header .layui-form-select dl dd:hover
+{
+    border-radius: 0 0 2px 2px;
+}
+.magicalcoder-edit .demo-right-config .layui-form-switch{
+    margin-right: 10px;
+}
+
+
+/*form-item*/
+.demo-right-config .layui-form-item{
+    min-height: 48px;
+}
+.demo-right-config .layui-form-item .layui-inline{
+    margin-right: 0px !important;
+    width: 73%;
+}
+.demo-right-config .layui-form-checkbox{
+    margin-top: 10px;
+}
+
+.demo-right-config .layui-slider-input .layui-slider-input-txt{
+    width:70px;
+    height: 32px;
+    margin-top:-1px;
+    margin-left: -11px !important;
+}
+.demo-right-config .layui-icon{
+    cursor: pointer;
+    font-size:15px;
+    color: #66696D;
+}
+
+
+
+.magicalcoder-hide-left {cursor:pointer;display: block!important; position: fixed; z-index: 100000; bottom: 15px; left: 15px; width:40px; height:40px; line-height:40px; border-radius: 2px; text-align: center; background-color: rgba(0,0,0,.7); color: #fff;}
+.magicalcoder-hide-right {cursor:pointer;display: block!important; position: fixed; z-index: 100000; bottom: 15px; right: 280px; width:40px; height:40px; line-height:40px; border-radius: 2px; text-align: center; background-color: rgba(0,0,0,.7); color: #fff;}
+
+
+.magicalcoder-page-container>.layui-row{
+    height: 100%;
+}
+.magicalcoder-hide-left-area,.magicalcoder-hide-center-area,.magicalcoder-hide-right-area{
+    height: 100%;
+}
+.magicalcoder-page-right-config-container{
+    height: 100%;
+}
+.magicalcoder-workground{
+    border-top: 1px solid #eee;
+    height: 100%;
+}
+
+.magicalcoder-edit{
+    overflow-y: hidden;
+}
+.magicalcoder-page-right-config-container fieldset.layui-elem-title{
+    border:none;
+    padding:0;
+    border-top:1px solid #ffffe6;
+    color:#307AFF;
+}
+
+/*背景图片格*/
+.mc-background-images-ul{margin-bottom: 50px;padding: 10px; }
+.mc-background-images-ul li{margin:2px;display: inline-block;  width: 200px;  line-height: 25px; padding: 20px; border: 1px solid #e2e2e2; font-size: 14px; text-align: center; color: #666; transition: all .3s; -webkit-transition: all .3s;}
+.mc-background-images-ul .active{border: 1px solid #307AFF; }
+/* 旋转180度 */
+.mc-transform-180{
+    transform: rotate(180deg);
+    -mc-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
+.mc-transform-90{
+    transform: rotate(90deg);
+    -mc-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+}
+.mc-transform-270{
+    transform: rotate(270deg);
+    -mc-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+}
+.magicalcoder-header-tools3 i{
+    font-weight: 500;
+    font-size: 18px;
+}
+/*右键菜单*/
+.magicalcoder_ztree_right_menu{
+    display:none;
+    position:absolute;
+    z-index: 2000;
+    width: 150px;
+    line-height:36px;
+    padding:5px 0;
+    margin:10px 0;
+}
+.magicalcoder_ztree_right_menu li{
+    padding:0 20px;
+    cursor:pointer;
+}
+
+/*选择器选择时的样式*/
+
+.magical-coder-mstyle .layui-input-block .magicalcoder-slider{
+    top:16px;
+}
+.magical-coder-mstyle .layui-col-md12 .magicalcoder-slider{
+    top:0px;
+}
+.magical-coder-mstyle .layui-input-block>.layui-icon-set-sm{
+    cursor: pointer;
+    position: relative;
+    left:20px;
+    top:6px;
+    float:right;
+}
+.magical-coder-mstyle .layui-col-md12>.layui-icon-set-sm{
+    cursor: pointer;
+    position: relative;
+    left:20px;
+    bottom: 10px;
+    float:right;
+}
+
+.magical-coder-mstyle-setting .layui-form-select dl{
+    color:black;
+}
+/*body基本色*/
+.mc-skin-darcula {
+    background-color: #fff;
+    color: #000;
+    /*以下是IE滚动条*/
+    /*三角箭头的颜色*/
+    scrollbar-arrow-color: #4E565D;
+    /*滚动条滑块按钮的颜色*/
+    scrollbar-face-color: #4E565D;
+    /*滚动条阴影*/
+    scrollbar-shadow-color: #24292E;
+    /*滚动条轨道颜色*/
+    scrollbar-track-color: #24292E;
+}
+/*其他浏览器滚动条颜色*/
+.mc-skin-darcula ::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+    background-color: #6c6f71;
+    border-radius: 3px;
+}
+/*定义chrome滚动条样式*/
+.mc-skin-darcula ::-webkit-scrollbar {/*滚动条整体样式*/
+    width: 6px;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 6px;
+    background-color: #4E565D;
+}
+.mc-skin-darcula ::-webkit-scrollbar-track {/*滚动条里面轨道 根据背景色自适应*/
+    border-radius: 3px;
+}
+/*顶部头部*/
+.mc-skin-darcula .magicalcoder-page-header {
+    background-color: #24292E;
+}
+/*顶部按钮颜色*/
+.mc-skin-darcula .magicalcoder-page-header button{
+    background-color: #33383E;
+    border:1px solid #40474E;
+    color: #fff;
+}
+.mc-skin-darcula .magicalcoder-page-header button:hover{
+    color: #fff;
+}
+/*左右侧基准色*/
+.mc-skin-darcula .el-aside {
+    background-color: #24292e;
+    border-top-color: #484C52;
+}
+/*左侧-拖拽源边框色 文本颜色*/
+.mc-skin-darcula .magicalcoder-page-drag-item-list .magicalcoder-page-drag-item-label>a {
+    border: 1px solid #33383E;
+    color: #ffffe6 !important;
+}
+/*左侧-拖拽源底色*/
+.mc-skin-darcula .magicalcoder-page-drag-item-list .magicalcoder-page-drag-item-label {
+    background-color: #33383E;
+    border: 1px solid #33383E
+}
+/*===============工作台==============*/
+.mc-skin-darcula .magicalcoder-workground{
+    background: #24292E;
+}
+/*界面种出现的输入框 下拉框 文本框等底色*/
+.mc-skin-darcula.magicalcoder-edit .demo-right-config .layui-textarea,
+.mc-skin-darcula.magicalcoder-edit .demo-right-config .layui-input,
+.mc-skin-darcula.magicalcoder-edit .magicalcoder-page-header .layui-textarea,
+.mc-skin-darcula.magicalcoder-edit .magicalcoder-page-header .layui-input{
+    background: #33383E;
+    border: 1px solid #40474E;
+    color: #ffffe6;
+}
+
+/*重定义layui在界面上出现的控件的基础颜色 北背景色 禁用色等*/
+.mc-skin-darcula.magicalcoder-edit .demo-right-config .layui-form-label{
+    color: #66696D;
+}
+.mc-skin-darcula.magicalcoder-edit .demo-right-config .layui-input:hover,
+.mc-skin-darcula.magicalcoder-edit .demo-right-config .layui-textarea:hover,
+.mc-skin-darcula.magicalcoder-edit .magicalcoder-page-header .layui-input:hover,
+.mc-skin-darcula.magicalcoder-edit .magicalcoder-page-header .layui-textarea:hover{
+    border-color: #40474E !important;
+}
+.mc-skin-darcula.magicalcoder-edit .demo-right-config .layui-input:active,
+.mc-skin-darcula.magicalcoder-edit .demo-right-config .layui-textarea:active,
+.mc-skin-darcula.magicalcoder-edit .magicalcoder-page-header .layui-input:active,
+.mc-skin-darcula.magicalcoder-edit .magicalcoder-page-header .layui-textarea:active
+{
+    border-color: #40474E !important;;
+}
+.mc-skin-darcula.magicalcoder-edit .demo-right-config .layui-input:focus,
+.mc-skin-darcula.magicalcoder-edit .demo-right-config .layui-textarea:focus,
+.mc-skin-darcula.magicalcoder-edit .magicalcoder-page-header .layui-input:focus,
+.mc-skin-darcula.magicalcoder-edit .magicalcoder-page-header .layui-textarea:focus
+{
+    border-color: #40474E !important;;
+}
+.mc-skin-darcula.magicalcoder-edit .demo-right-config .layui-form-select dl,
+.mc-skin-darcula.magicalcoder-edit .magicalcoder-page-header .layui-form-select dl
+{
+    background-color: #33383E;
+    border: 1px solid #40474E;
+    color:#ffffe6;
+}
+.mc-skin-darcula.magicalcoder-edit .demo-right-config .layui-form-select dl dd:hover,
+.mc-skin-darcula.magicalcoder-edit .magicalcoder-page-header .layui-form-select dl dd:hover
+{
+    background-color:#3F454E;
+}
+.mc-skin-darcula.magicalcoder-edit .demo-right-config .layui-form-select dl dd.layui-this,
+.mc-skin-darcula.magicalcoder-edit .magicalcoder-page-header .layui-form-select dl dd.layui-this
+{
+    background-color:#307AFF;
+    color: #ffffe6;
+}
+.mc-skin-darcula.magicalcoder-edit .demo-right-config .layui-select-disabled .layui-disabled,
+.mc-skin-darcula.magicalcoder-edit .magicalcoder-page-header .layui-select-disabled .layui-disabled
+{
+    border-color:#40474E !important;
+}
+.mc-skin-darcula.magicalcoder-edit .demo-right-config .layui-timeline-item:before,
+.mc-skin-darcula.magicalcoder-edit .demo-right-config hr{
+    background-color:#40474E;
+}
+.mc-skin-darcula.magicalcoder-edit .demo-right-config .layui-form-switch{
+    background-color:#40474E;
+    border: 1px solid #40474E;
+}
+.mc-skin-darcula.magicalcoder-edit .demo-right-config .layui-form-onswitch{
+    background-color:#307AFF;
+    border: 1px solid #307AFF;
+}
+.mc-skin-darcula.magicalcoder-edit .demo-right-config .layui-form-switch em{
+    color:#ffffe6 !important;
+}
+.mc-skin-darcula.magicalcoder-edit .demo-right-config .layui-btn{
+    background-color: #307AFF;
+}
+.mc-skin-darcula.magicalcoder-edit .demo-right-config .layui-form-checked span,
+.mc-skin-darcula.magicalcoder-edit .demo-right-config .layui-form-checked:hover span{
+    background-color: #307AFF;
+}
+.mc-skin-darcula.magicalcoder-edit .demo-right-config .layui-form-checked i,
+.mc-skin-darcula.magicalcoder-edit .demo-right-config .layui-form-checked:hover i{
+    color: #307AFF;
+}
+/*右侧属性模块*/
+.mc-skin-darcula .magicalcoder-page-right-config-container .config-tab {
+    background: #33383E;
+    color:#ffffe6;
+}
+/*鼠标悬停属性顶部tab标签颜色*/
+.mc-skin-darcula .magicalcoder-page-right-config-container .config-tab:hover{
+    background: #24292E;
+}
+/*右键菜单*/
+.mc-skin-darcula.magicalcoder-edit .right-menu{
+    border:1px solid #DDDDDD;
+    box-shadow:0 2px 4px rgba(0,0,0,.12);
+    background-color:#33383E;
+}
+.mc-skin-darcula.magicalcoder-edit .right-menu li:hover{
+    background-color:#3F454E;
+}
+.mc-skin-darcula.magicalcoder-edit .right-menu a{
+    color:#ffffe6 !important;
+}
+
+.mc-skin-darcula.magicalcoder-edit .magicalcoder-page-link{
+    color:#ffffe6
+}
+/*导航树配色*/
+/*右键菜单*/
+.magicalcoder_ztree_right_menu{
+    border:1px solid #DDDDDD;
+    box-shadow:0 2px 4px rgba(0,0,0,.12);
+    background-color:#33383E;
+}
+.magicalcoder_ztree_right_menu li:hover{
+    background-color:#3F454E;
+}
+.magicalcoder_ztree_right_menu a{
+    color:#ffffe6 !important;
+}
+
+.ztree li a{
+    color: #ffffe6 !important;
+}
+.ztree li a.curSelectedNode {
+    background-color: #307AFF;
+    border: 1px #307AFF solid;
+}
+
+.ztree .magicalcoder-ztree-name-attr{
+    color:#30ff68;
+}
+.ztree .magicalcoder-ztree-name-text{
+    color:#30ff68;
+}
+
+/*body基本色*/
+.mc-skin-white {
+    background-color: #fff;
+    color: #000;
+    /*以下是IE滚动条*/
+    /*三角箭头的颜色*/
+    scrollbar-arrow-color: #4E565D;
+    /*滚动条滑块按钮的颜色*/
+    scrollbar-face-color: #4E565D;
+    /*滚动条阴影*/
+    scrollbar-shadow-color: white;
+    /*滚动条轨道颜色*/
+    scrollbar-track-color: white;
+}
+/*其他浏览器滚动条颜色*/
+.mc-skin-white ::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+    background-color: #6c6f71;
+    border-radius: 3px;
+}
+/*定义chrome滚动条样式*/
+.mc-skin-white ::-webkit-scrollbar {/*滚动条整体样式*/
+    width: 6px;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 6px;
+    background-color: #4E565D;
+}
+.mc-skin-white ::-webkit-scrollbar-track {/*滚动条里面轨道 根据背景色自适应*/
+    border-radius: 3px;
+}
+/*顶部头部*/
+.mc-skin-white .magicalcoder-page-header {
+    background-color: white;
+}
+/*左右侧基准色*/
+.mc-skin-white .el-aside {
+    background-color:white;
+    border-top-color: #484C52;
+}
+/*左侧-拖拽源边框色 文本颜色*/
+.mc-skin-white .magicalcoder-page-drag-item-list .magicalcoder-page-drag-item-label>a {
+    border: 1px solid #33383E;
+    color: #ffffe6 !important;
+}
+/*左侧-拖拽源底色*/
+.mc-skin-white .magicalcoder-page-drag-item-list .magicalcoder-page-drag-item-label {
+    background-color: #33383E;
+    border: 1px solid #33383E
+}
+/*===============工作台==============*/
+.mc-skin-white .magicalcoder-workground{
+    background: white;
+}
+/*界面种出现的输入框 下拉框 文本框等底色*/
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-textarea,
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-input,
+.mc-skin-white.magicalcoder-edit .magicalcoder-page-header .layui-textarea,
+.mc-skin-white.magicalcoder-edit .magicalcoder-page-header .layui-input{
+    background: #33383E;
+    border: 1px solid white;
+    color: #ffffe6;
+}
+
+/*重定义layui在界面上出现的控件的基础颜色 北背景色 禁用色等*/
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-form-label{
+    color: #66696D;
+}
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-input:hover,
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-textarea:hover,
+.mc-skin-white.magicalcoder-edit .magicalcoder-page-header .layui-input:hover,
+.mc-skin-white.magicalcoder-edit .magicalcoder-page-header .layui-textarea:hover{
+    border-color: white !important;
+}
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-input:active,
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-textarea:active,
+.mc-skin-white.magicalcoder-edit .magicalcoder-page-header .layui-input:active,
+.mc-skin-white.magicalcoder-edit .magicalcoder-page-header .layui-textarea:active
+{
+    border-color: white !important;;
+}
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-input:focus,
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-textarea:focus,
+.mc-skin-white.magicalcoder-edit .magicalcoder-page-header .layui-input:focus,
+.mc-skin-white.magicalcoder-edit .magicalcoder-page-header .layui-textarea:focus
+{
+    border-color: white !important;;
+}
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-form-select dl,
+.mc-skin-white.magicalcoder-edit .magicalcoder-page-header .layui-form-select dl
+{
+    background-color: #33383E;
+    border: 1px solid white;
+    color:#ffffe6;
+}
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-form-select dl dd:hover,
+.mc-skin-white.magicalcoder-edit .magicalcoder-page-header .layui-form-select dl dd:hover
+{
+    background-color:#3F454E;
+}
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-form-select dl dd.layui-this,
+.mc-skin-white.magicalcoder-edit .magicalcoder-page-header .layui-form-select dl dd.layui-this
+{
+    background-color:#307AFF;
+    color: #ffffe6;
+}
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-select-disabled .layui-disabled,
+.mc-skin-white.magicalcoder-edit .magicalcoder-page-header .layui-select-disabled .layui-disabled
+{
+    border-color:white !important;
+}
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-timeline-item:before,
+.mc-skin-white.magicalcoder-edit .demo-right-config hr{
+    background-color:white;
+}
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-form-switch{
+    background-color:white;
+    border: 1px solid white;
+}
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-form-onswitch{
+    background-color:#307AFF;
+    border: 1px solid #307AFF;
+}
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-form-switch em{
+    color:#ffffe6 !important;
+}
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-btn{
+    background-color: #307AFF;
+}
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-form-checked span,
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-form-checked:hover span{
+    background-color: #307AFF;
+}
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-form-checked i,
+.mc-skin-white.magicalcoder-edit .demo-right-config .layui-form-checked:hover i{
+    color: #307AFF;
+}
+/*右侧属性模块*/
+.mc-skin-white .magicalcoder-page-right-config-container .config-tab {
+    background: #33383E;
+    color:#ffffe6;
+}
+/*鼠标悬停属性顶部tab标签颜色*/
+.mc-skin-white .magicalcoder-page-right-config-container .config-tab:hover{
+    background: white;
+}
+/*右键菜单*/
+.mc-skin-white.magicalcoder-edit .right-menu{
+    border:1px solid #DDDDDD;
+    box-shadow:0 2px 4px white;
+    background-color:#33383E;
+}
+.mc-skin-white.magicalcoder-edit .right-menu li:hover{
+    background-color:#3F454E;
+}
+.mc-skin-white.magicalcoder-edit .right-menu a{
+    color:#ffffe6 !important;
+}

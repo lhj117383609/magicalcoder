@@ -1,0 +1,468 @@
+
+.magicalcoder-dragging .magical-coder-tmp{
+    position: relative;
+    background-color: #33383E;
+    overflow: hidden;
+    cursor: move;
+}
+/* 为了预览能看到 */
+
+.magicalcoder-dragging .mc-root{
+    border: 1px dashed #988;
+    padding: 0px 10px 100px 0px;
+    margin-bottom: 100px;
+    overflow: auto;
+}
+
+
+body{
+    background-color:#eee!important;
+    overflow-x: hidden;
+}
+
+.mc-window{
+    min-height: 100% !important;
+}
+
+/*当拖拽的时候，把之前隐藏的元素*/
+.magicalcoder-dragging .drag-mc-pane:not(.mc-root){
+	border: 1px solid #c9cadd;
+	padding: 12px;
+	min-width: 5px;
+	min-height: 60px;/*保证内部有高度方便其他控件拖入*/
+	margin-top:5px;
+}
+/*拖拽期间 隐藏掉li的点样式*/
+.magicalcoder-dragging li,li.magicalcoder-page-drag-item-label {list-style-type:none;}
+/*表格显示的很小*/
+.magicalcoder-dragging td.drag-mc-pane{
+    padding: 20px;
+}
+
+/*绝对定位样式优化 */
+/*本身别有padding 别有margin否则子元素对不齐*/
+.magicalcoder-dragging .magical-coder-layui-absolute-pane.drag-mc-pane{
+    padding: 0px!important;
+    margin-top:0px!important;
+}
+/*他的孩子都不用margin它 否则也对不齐*/
+.magicalcoder-dragging .magical-coder-layui-absolute-pane .drag-mc-pane{
+    margin-top:0px!important;
+}
+/*临时包裹标签*/
+.magicalcoder-dragging span.magicalcoder-tmp-wrap,.magicalcoder-dragging span.magical-coder-layui-tmp-pane{
+	padding: 5px;
+	border: 1px solid #c9cadd;
+	display: inline-block;/*这样拖拽的时候就能让span的宽 高生效了*/
+}
+.magicalcoder-dragging  div.magicalcoder-tmp-wrap,.magicalcoder-dragging  div.magical-coder-layui-tmp-pane{
+	padding: 5px;
+	border: 1px solid #c9cadd;
+	display: block;/*这样拖拽的时候就能让span的宽 高生效了*/
+}
+
+ /*自定义的表格样式 视图区域显示列*/
+.magicalcoder-dragging .magicalcoder-table-th{
+    display: inline-block;
+}
+/*自定义的表格样式 预览区域隐藏列*/
+.magicalcoder-table-th{
+    display: none;
+}
+/*错误警告*/
+.magicalcoder-dragging .magicalcoder-error{
+    animation: error-star 800ms ease-out infinite alternate;
+}
+/*警告*/
+.magicalcoder-dragging .magicalcoder-warn{
+    animation: warn-star 800ms ease-out infinite alternate;
+}
+/*辅助按钮容器*/
+.magicalcoder-dragging .magicalcoder-assist-container{
+    position: relative;
+}
+/*辅助图标预览不显示*/
+.magicalcoder-assist{
+    display: none;
+}
+/*视图模式显示出来*/
+.magicalcoder-dragging .magicalcoder-assist{
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: inline-block;
+}
+.magicalcoder-dragging .magicalcoder-assist i{
+    font-size: 20px;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.magicalcoder-dragging .magicalcoder-assist i.mc-assist-add{
+    color: #307AFF;
+}
+.magicalcoder-dragging .magicalcoder-assist i.mc-assist-duplicate{
+    color: #307AFF;
+}
+.magicalcoder-dragging .magicalcoder-assist i.mc-assist-delete{
+    color: red;
+}
+.magicalcoder-dragging .magicalcoder-assist i.mc-assist-help{
+    color: red;
+}
+@keyframes error-star {
+    0% {
+        border-color: #991309;
+        box-shadow: 0 0 0 rgba(255, 62, 18, 0.2), inset 0 0 0 rgba(255, 16, 89, 0.1), 0 0 0 #990907;
+    }
+    100% {
+        border-color: #ff681a;
+        box-shadow: 0 0 10px rgba(255, 53, 15, 0.6), inset 0 0 0 rgba(255, 27, 146, 0.4), 0 0 0 #ff0e13;
+    }
+}
+@keyframes warn-star {
+    0% {
+        border-color: #998710;
+        box-shadow: 0 0 0 rgba(255, 204, 48, 0.2), inset 0 0 0 rgba(255, 183, 36, 0.1), 0 0 0 #998118;
+    }
+    100% {
+        border-color: #ffa31e;
+        box-shadow: 0 0 10px rgba(255, 192, 30, 0.6), inset 0 0 0 rgba(255, 218, 35, 0.4), 0 0 0 #ffd017;
+    }
+}
+/*拖拽时 缩小下区域 容易放置*/
+.drag-view{
+	overflow: hidden;/*超出区域隐藏 体验更好了*/
+	background-color: #24292E !important;;
+	background: #24292E !important;;
+	border: 1px dashed #307AFF !important;;
+	padding:0px !important;/*临时把drag-mc-pane设置失效 否则表现跟大家不一样*/
+	width:15px !important;;
+	height: 15px !important;
+	min-width: 15px !important;
+	min-height: 15px !important;
+	max-width: 15px !important;
+	max-height: 15px !important;
+	opacity: 1 !important;;
+	z-index: 999999999 !important;;/*最前置顶 不可删除*/
+    display: inline-block;
+}
+
+
+.sortable-drag{
+    opacity: 1 !important;
+    border:1px solid #40474E !important;
+}
+/*重新layui样式 太窄了 加上边框后 修复聚焦后 宽会超出 换行了*/
+.layui-form-label{
+    width:78px;
+}
+/*===============工作台 end    ==============*/
+
+/*左侧内容拖拽到中间区域 把文字隐藏*/
+ .magicalcoder-page-drag-item-label>a{
+	display: none;
+}
+.magicalcoder-hide{
+	 display: none !important;
+}
+
+
+/*统一强制样式操作 优先级最高*/
+/*想要样式强制生效 选这个*/
+.magicalcoder-focus-border:not(.mc-root),.magicalcoder-focus-border:focus:not(.mc-root),.magicalcoder-focus-border:hover:not(.mc-root){
+	border: 1px dashed #409eff !important;
+    border-color:#409eff !important;
+}
+.magicalcoder-focus-parent-border:not(.mc-root){
+	border: 2px dashed #ffdb3f !important;
+    border-color: #ffdb3f !important;
+    animation: focus-parent-border-star 800ms ease-out infinite alternate !important;
+}
+@keyframes focus-parent-border-star {
+    0% {
+        border-color: #ffdb3f;
+        box-shadow: 0 0 0 #ffdb3f, inset 0 0 0 #ffdb3f, 0 0 0 #ffdb3f;
+    }
+    100% {
+        border-color: #ffdb3f;
+        box-shadow: 0 0 10px #ffdb3f, inset 0 0 0 #ffdb3f, 0 0 0 #ffdb3f;
+    }
+}
+.magicalcoder-focus-parent-not-allow-border{
+	border: 2px dashed #dbe0ff !important;
+    animation: fade 600ms infinite;
+    -webkit-animation: fade 600ms infinite;
+    animation: focus-parent-not-border-star 800ms ease-out infinite alternate !important;
+
+}
+@keyframes focus-parent-not-border-star {
+    0% {
+        border-color: #dbe0ff;
+        box-shadow: 0 0 0 #dbe0ff, inset 0 0 0 #dbe0ff, 0 0 0 #dbe0ff;
+    }
+    100% {
+        border-color: #dbe0ff;
+        box-shadow: 0 0 10px #dbe0ff, inset 0 0 0 #dbe0ff, 0 0 0 #dbe0ff;
+    }
+}
+/*td layui 1px不行*/
+
+.layui-table td.magicalcoder-focus-border,
+.layui-table th.magicalcoder-focus-border,
+.layui-table tr.magicalcoder-focus-border,
+.layui-table table.magicalcoder-focus-border{
+    border: 2px dashed #409eff !important;
+}
+/*修复拖拽大小聚焦时自动加的滚动条 体验不好*/
+.layui-btn{
+    overflow: hidden;
+}
+.mc-table td.magicalcoder-focus-border,
+.mc-table th.magicalcoder-focus-border,
+.mc-table tr.magicalcoder-focus-border,
+.mc-table table.magicalcoder-focus-border{
+    border: 2px dashed #409eff !important;
+}
+
+td.magicalcoder-focus-border,
+th.magicalcoder-focus-border,
+tr.magicalcoder-focus-border,
+table.magicalcoder-focus-border{
+	border: 1px dashed #409eff !important;
+}
+
+
+/*缩放*/
+.magicalcoder-zoom{
+    max-height: 100px;
+    min-height: 40px;
+    background-color:#cfc7c7;
+}
+/*辅助图标不隐藏*/
+.magicalcoder-zoom .magicalcoder-assist{
+    display: inline-block;
+}
+.magicalcoder-zoom .magicalcoder-assist i{
+    display: inline-block;
+}
+
+.magicalcoder-zoom::after{
+    content: "缩放状态" !important;
+    /*background-color: #F5F5F5;*/
+    border-radius: 4px 0 4px 0;
+    color: #9DA0A4;
+    font-size: 12px;
+    font-weight: bold;
+    right: -1px;
+    line-height:2;
+    /*padding: 3px 7px;
+    position: absolute;*/
+    /*top: -1px;*/
+}
+.magicalcoder-zoom div{
+    display:none;
+}
+.magicalcoder-zoom span{
+    display:none;
+}
+.magicalcoder-zoom form{
+    display:none;
+}
+.magicalcoder-zoom label{
+    display:none;
+}
+.magicalcoder-zoom ul{
+    display:none;
+}
+.magicalcoder-zoom li{
+    display:none;
+}
+.magicalcoder-zoom ol{
+    display:none;
+}
+.magicalcoder-zoom table{
+    display:none;
+}
+.magicalcoder-zoom tbody{
+    display:none;
+}
+.magicalcoder-zoom thead{
+    display:none;
+}
+.magicalcoder-zoom tfoot{
+    display:none;
+}
+.magicalcoder-zoom tr{
+    display:none;
+}
+.magicalcoder-zoom td{
+    display:none;
+}
+.magicalcoder-zoom th{
+    display:none;
+}
+/*form*/
+.magicalcoder-zoom button{
+    display:none;
+}
+.magicalcoder-zoom input{
+    display:none;
+}
+.magicalcoder-zoom textarea{
+    display:none;
+}
+.magicalcoder-zoom select{
+    display:none;
+}
+.magicalcoder-zoom a{
+    display:none;
+}
+.magicalcoder-zoom img{
+    display:none;
+}
+.magicalcoder-zoom i{
+    display:none;
+}
+.magicalcoder-zoom blockquote{
+    display:none;
+}
+.magicalcoder-zoom hr{
+    display:none;
+}
+.magicalcoder-zoom pre{
+    display:none;
+}
+.magicalcoder-zoom code{
+    display:none;
+}
+
+/*定义chrome滚动条样式*/
+::-webkit-scrollbar {/*滚动条整体样式*/
+    width: 6px;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 6px;
+}
+::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+    border-radius: 3px;
+   /* -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);*/
+    background-color: #4E565D;
+}
+::-webkit-scrollbar-track {/*滚动条里面轨道 根据背景色自适应*/
+    /*-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);*/
+    border-radius: 3px;
+    /*background-color: #24292E;*/
+}
+/*定义ie滚动条样式*/
+body{
+    /*三角箭头的颜色*/
+    scrollbar-arrow-color: #4E565D;
+    /*滚动条滑块按钮的颜色*/
+    scrollbar-face-color: #4E565D;
+    /*滚动条整体颜色*/
+    /*scrollbar-highlight-color: #333;*/
+    /*滚动条阴影*/
+    scrollbar-shadow-color: #24292E;
+    /*滚动条轨道颜色*/
+    scrollbar-track-color: #24292E;
+}
+
+/*扩展配置里面的图标*/
+.magicalcoder-extend-icons{margin-bottom: 50px; font-size: 0;}
+.magicalcoder-extend-icons li{display: inline-block; vertical-align: middle; width: 60px; height: 30px; line-height: 25px; padding: 20px 0; margin-right: -1px; margin-bottom: -1px; border: 1px solid #e2e2e2; font-size: 14px; text-align: center; color: #666; transition: all .3s; -webkit-transition: all .3s;}
+.magicalcoder-antd-extend-icons li{ height: 60px; }
+.site-doc-anim li{height: auto;}
+.magicalcoder-extend-icons li i{display: inline-block; font-size: 36px;cursor: pointer}
+.magicalcoder-antd-extend-icons li i{margin-top:-10px}
+
+.magicalcoder-extend-icons li:hover{background-color: #f2f2f2; color: #000;}
+.magicalcoder-extend-icons i.active{
+    color: #307AFF;
+}
+/*绝对定位样式优化 */
+/*本身别有padding 别有margin否则子元素对不齐*/
+.magicalcoder-dragging .mc-ui-absolute-pane.drag-mc-pane{
+    padding: 0px!important;
+    margin-top:0px!important;
+}
+/*他的孩子都不用margin它 否则也对不齐*/
+.magicalcoder-dragging .mc-ui-absolute-pane .drag-mc-pane{
+    margin-top:0px!important;
+}
+/*当在绝对定位面板移动时 隐藏黑点 这样漂亮很多*/
+.mc-ui-absolute-pane>.drag-view,
+.mc-ui-absolute-pane>li.magical-drag-drop-chosen
+{
+    display: none !important;
+}
+/* 解决当td是自由定位时 拖拽放手后 top的值偏差 默认是center导致offsetY值减了 千万别删除 */
+td.mc-ui-absolute-pane{
+    vertical-align: top;
+    text-align:left;
+    /* min-width: 100% !important; */
+}
+
+
+
+
+/*拖拽调整宽高*/
+.magical_resize_s_resize,.magical_resize_s_resize .el-input__inner,.magical_resize_s_resize>input{
+    cursor:s-resize !important;
+    /*优化拖拽宽高时 隐藏进度条 否则没法拖拽*/
+    overflow-x: hidden !important;
+}
+.magical_resize_e_resize,.magical_resize_e_resize .el-input__inner,.magical_resize_e_resize>input{
+    cursor: e-resize !important;
+    /*优化拖拽宽高时 隐藏进度条 否则没法拖拽*/
+    overflow-y: hidden !important;
+}
+.magical_resize_se_resize,.magical_resize_se_resize .el-input__inner,.magical_resize_se_resize>input{
+    cursor: se-resize !important;
+    /*优化拖拽宽高时 隐藏进度条 否则没法拖拽*/
+    overflow: hidden !important;
+}
+
+
+/*对齐辅助线*/
+/*水平线*/
+.magicalcoder-drag-align-h{
+    border-top:2px dashed #307AFF;
+    width: 100%;
+}
+/*垂直线*/
+.magicalcoder-drag-align-v{
+    border-left:2px dashed #307AFF;
+    height: 100%;
+}
+.mc-ui-absolute-pane .magicalcoder-drag-align-h{
+    width: 100% !important;
+}
+
+/* 网格 */
+.magicalcoder-dragging.mc-net-line-40{
+    background:-webkit-linear-gradient(top, transparent 38px, white 40px),-webkit-linear-gradient(left,transparent 38px, white 40px);
+    background:-moz-linear-gradient(top, transparent 38px,white 40px),-moz-linear-gradient(left, transparent 38px, white 40px);
+    background:-o-linear-gradient(top, transparent 38px, white 40px),-o-linear-gradient(left, transparent 38px, white 40px);
+    background:-ms-linear-gradient(top, transparent 38px, white 40px),-ms-linear-gradient(left, transparent 38px, white 40px);
+    background:linear-gradient(top, transparent 38px, white 40px),linear-gradient(left, transparent 38px, white 40px);
+    background-size: 40px 40px;
+}
+.magicalcoder-dragging.mc-net-line-20{
+    background:-webkit-linear-gradient(top, transparent 18px, white 20px),-webkit-linear-gradient(left,transparent 18px, white 20px);
+    background:-moz-linear-gradient(top, transparent 18px,white 20px),-moz-linear-gradient(left, transparent 18px, white 20px);
+    background:-o-linear-gradient(top, transparent 18px, white 20px),-o-linear-gradient(left, transparent 18px, white 20px);
+    background:-ms-linear-gradient(top, transparent 18px, white 20px),-ms-linear-gradient(left, transparent 18px, white 20px);
+    background:linear-gradient(top, transparent 18px, white 20px),linear-gradient(left, transparent 18px, white 20px);
+    background-size: 20px 20px;
+}
+
+.magicalcoder-dragging .mc-shade{
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left:0;
+    right: 0;
+    background-color: black;
+    height: 100%;
+    z-index: 9999;
+    opacity: 0.01;
+}
