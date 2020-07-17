@@ -86,10 +86,10 @@ function Constant(){
                     icon:"assets/drag/img/left/radar.png",
                     html:"<div class='mc-echarts-radar' style='height:400px;'></div>"
                 },{
-                    name:"K线图",
-                    icon:"assets/drag/img/left/candlestick.png",
-                    html:"<div class='mc-echarts-k' style='height:400px;'></div>"
-                },{
+                //     name:"K线图",
+                //     icon:"assets/drag/img/left/candlestick.png",
+                //     html:"<div class='mc-echarts-k' style='height:400px;'></div>"
+                // },{
                     name:"树图",
                     icon:"assets/drag/img/left/tree.png",
                     html:"<div class='mc-echarts-tree' style='height:400px;'></div>"
@@ -102,10 +102,10 @@ function Constant(){
                     icon:"assets/drag/img/left/gauge.png",
                     html:"<div class='mc-echarts-gauge' style='height:400px;'></div>"
                 },{
-                    name:"盒须图",
-                    icon:"assets/drag/img/left/boxplot.png",
-                    html:"<div class='mc-echarts-boxplot' style='height:400px;'></div>"
-                },{
+                //     name:"盒须图",
+                //     icon:"assets/drag/img/left/boxplot.png",
+                //     html:"<div class='mc-echarts-boxplot' style='height:400px;'></div>"
+                // },{
                     name:"旭日图",
                     icon:"assets/drag/img/left/sunburst.png",
                     html:"<div class='mc-echarts-sunburst' style='height:400px;'></div>"
@@ -122,10 +122,10 @@ function Constant(){
                     icon:"assets/drag/img/left/sankey.png",
                     html:"<div class='mc-echarts-sankey' style='height:400px;'></div>"
                 },{
-                    name:"平行坐标",
-                    icon:"assets/drag/img/left/parallel.png",
-                    html:"<div class='mc-echarts-parallel' style='height:400px;'></div>"
-                },{
+                //     name:"平行坐标",
+                //     icon:"assets/drag/img/left/parallel.png",
+                //     html:"<div class='mc-echarts-parallel' style='height:400px;'></div>"
+                // },{
                     name:"主题河流",
                     icon:"assets/drag/img/left/themeriver.png",
                     html:"<div class='mc-echarts-themeriver' style='height:400px;'></div>"
@@ -137,265 +137,44 @@ function Constant(){
             ]
         },
         {
-            name:"示例",
+            name:"文字",
             children:[
                 {
-                    name:"居中技巧",
-                    icon:"assets/drag/img/left/other1.png",
-                    html:"<div class='layui-container' style='width: 30%'></div>"
-                }
-            ]
-        },{
-            name:"容器",
-            children:[
-                {
-                    name:"左右行列",
-                    icon:"assets/drag/img/left/around1.png",
-                    html:"<div class='layui-row'><div class='layui-col-md6'></div><div class='layui-col-md6'></div></div>",
-                },{
-                    name:"上下行列",
-                    icon:"assets/drag/img/left/updown1.png",
-                    html:"<div class='layui-row'><div class='layui-col-xs12'></div><div class='layui-col-xs12'></div></div>",
-                },{
-                    name:"居中容器",
-                    icon:"assets/drag/img/left/wide1.png",
-                    html:"<div class='layui-container'></div>",
-                },{
-                    name:"屏幕自适应",
-                    icon:"assets/drag/img/left/wide1.png",
-                    html:"<div class='layui-fluid'></div>",
-                },{
-                    name:"自由定位",
-                    icon:"assets/drag/img/left/freedom1.png",
-                    html:"<div class='mc-ui-absolute-pane'></div>",
-                },
-            ]
-        },{
-            name:"定制化的表单",
-            children:[
-                {
-                    name:"表单容器",
-                    icon:"assets/drag/img/left/menu1.png",
-                    html:"<form class='layui-form'><div class='layui-form-item'><label class='layui-form-label'>标题</label><div class='layui-input-block'></div></div><div class='layui-form-item'><div class='layui-inline'><label class='layui-form-label'>标题</label><div class='layui-input-inline'></div></div><div class='layui-inline'><label class='layui-form-label'>标题</label><div class='layui-input-inline'></div></div></div><div class='layui-form-item'><div class='layui-input-block'><a class='layui-btn'>确定</a></div></div></form>"
-                },{
-                    name:"单列条目",
-                    icon:"assets/drag/img/left/clauses1.png",
-                    html:"<div class='layui-form-item'><label class='layui-form-label'>标题</label><div class='layui-input-block'></div></div>"
-                },{
-                    name:"多列条目",
-                    icon:"assets/drag/img/left/clauses1.png",
-                    html:"<div class='layui-form-item'><div class='layui-inline'><label class='layui-form-label'>标题</label><div class='layui-input-inline'></div></div><div class='layui-inline'><label class='layui-form-label'>标题</label><div class='layui-input-inline'></div></div></div>"
-                },{
-                    name:"按钮条目",
-                    icon:"assets/drag/img/left/clauses1.png",
-                    html:"<div class='layui-form-item'><div class='layui-input-block'><a class='layui-btn'>确定</a></div></div>"
-                },{
-                    name:"块级区域",
-                    icon:"assets/drag/img/left/chunk1.png",
-                    html:"<div class='layui-input-block'></div>"
-                },{
-                    name:"行内区域",
-                    icon:"assets/drag/img/left/row1.png",
-                    html:"<div class='layui-inline'></div>"
-                },{
-                    name:"输入行内",
-                    icon:"assets/drag/img/left/import1.png",
-                    html:"<div class='layui-input-inline'></div>"
-                },{
-                    name:"极小区域",
-                    icon:"assets/drag/img/left/mini1.png",
-                    html:"<div class='layui-form-mid'>-</div>"
-                },{
-                    name:"按钮组",
-                    icon:"assets/drag/img/left/btngroup1.png",
-                    html:"<div class='layui-btn-group'><a class='layui-btn'>按钮</a></div>"
-                },{
                     name:"标题",
                     icon:"assets/drag/img/left/other1.png",
                     html:"<label class='layui-form-label'>标题</label>"
                 },
-
+                {
+                    name:"段落",
+                    icon:"assets/drag/img/left/p1.png",
+                    html:"<p>这是一段落</p>"
+                }
+                // {
+                //     name:"居中技巧",
+                //     icon:"assets/drag/img/left/other1.png",
+                //     html:"<div class='layui-container' style='width: 30%'></div>"
+                // }
             ]
         },{
-            name:"表单控件",
-            children:[
-                {
-                    name:"输入框",
-                    icon:"assets/drag/img/left/import1.png",
-                    html:"<input type='text' autocomplete='off' class='layui-input'/>"
-                }/*,{
-                    name:"密码框",
-                    icon:"assets/drag/img/left/password1.png",
-                    html:"<input type='password' autocomplete='off' class='layui-input'/>"
-                }*/,{
-                    name:"文本框",
-                    icon:"assets/drag/img/left/text1.png",
-                    html:"<textarea placeholder='请输入内容' class='layui-textarea'></textarea>"
-                },{
-                    name:"下拉框",
-                    icon:"assets/drag/img/left/pull1.png",
-                    html:"<select><option value='0'>选项A</option><option value='1'>选项B</option>"
-                },{
-                    name:"开关",
-                    icon:"assets/drag/img/left/onoff1.png",
-                    html:"<input type='checkbox' name='switch' lay-skin='switch'>"
-                },{
-                    name:"单选",
-                    icon:"assets/drag/img/left/choice1.png",
-                    html:"<input type='radio' name='sex' value='1' title='男'>"
-                },{
-                    name:"复选框",
-                    icon:"assets/drag/img/left/multiple1.png",
-                    html:"<input type='checkbox' name='checkbox' title='复选框'>"
-                },{
-                    name:"图片",
-                    icon:"assets/drag/img/left/photo1.png",
-                    html:"<img style='width:100%;' src='img.jpg'/>"
-                },{
-                    name:"按钮",
-                    icon:"assets/drag/img/left/btn1.png",
-                    html:"<a class='layui-btn'>按钮</a>"
-                }
-            ]
-        },
-        {
-            name:"高级组件",
-            children:[
-                {
-                    name:"文件上传",
-                    icon:"assets/drag/img/left/uploading1.png",
-                    html:"<button type='button' class='magicalcoder-layupload layui-btn'>上传图片</button>"
-                },
-                {
-                    name:"颜色选择器",
-                    icon:"assets/drag/img/left/color1.png",
-                    html:"<div class='magicalcoder-color-picker'></div>"
-                },
-                {
-                    name:"滑块",
-                    icon:"assets/drag/img/left/sliding1.png",
-                    html:"<div class='magicalcoder-slider' mc-attr-bool-tips='true'></div>"
-                },
-                {
-                    name:"评分",
-                    icon:"assets/drag/img/left/grade1.png",
-                    html:"<div class='magicalcoder-rate'></div>"
-                },
-                {
-                    name:"动态表格",
-                    icon:"assets/drag/img/left/form1.png",
-                    html:"<div mc-attr-bool-loading='false' class='magicalcoder-table'  mc-attr-str-url='assets/drag/js/data/layui/list.json' mc-attr-str-toolbar='#tableToolbar' mc-attr-json-default-toolbar='[&quot;filter&quot;,&quot;exports&quot;,&quot;print&quot;]'><div id='tableToolbar' class='magicalcoder-table-tool-bar layui-hide'><div class='layui-inline' lay-event='add'><i class='layui-icon layui-icon-add-1'></i></div><div class='layui-inline' lay-event='update'><i class='layui-icon layui-icon-edit'></i></div><div class='layui-inline' lay-event='delete'><i class='layui-icon layui-icon-delete'></i></div></div><span class='magicalcoder-table-th layui-hide' mc-attr-str-field='id'>ID</span><span class='magicalcoder-table-th layui-hide' mc-attr-str-field='name'>名称</span><span class='magicalcoder-table-th layui-hide' mc-attr-str-field='description'>简介</span><span class='magicalcoder-table-th layui-hide' mc-attr-str-toolbar='#tableColToolbar'>操作</span><div id='tableColToolbar' class='magicalcoder-table-col-tool-bar layui-hide'><a class='layui-btn layui-btn-xs' lay-event='detail'>查看</a><a class='layui-btn layui-btn-xs' lay-event='edit'>编辑</a><a class='layui-btn layui-btn-danger layui-btn-xs' lay-event='del'>删除</a></div></div>"
-                },{
-                    name:"静态表格",
-                    icon:"assets/drag/img/left/form1.png",
-                    html:"<table class='layui-table'><thead><tr><th>列1</th><th>列2</th><th>列3</th></tr></thead><tbody><tr><td></td><td></td><td></td></tr></tbody></table>"
-                },
-                {
-                    name:"代码",
-                    icon:"assets/drag/img/left/code1.png",
-                    html:"<div class='magicalcoder-code' mc-attr-bool-about='false'></div>"
-                },{
-                    name:"轮播",
-                    icon:"assets/drag/img/left/carousel1.png",
-                    html:"<div class='layui-carousel' mc-attr-bool-autoplay='true' mc-attr-num-interval='3000' mc-attr-str-width='100%'><div class='magicalcoder-carousel-items' carousel-item><div class='magicalcoder-carousel-item'></div><div class='magicalcoder-carousel-item'></div></div></div>"
-                },{
-                    name:"日期",
-                    icon:"assets/drag/img/left/day1.png",
-                    html:"<input type='text' name='createTime' placeholder='' autocomplete='off' class='magicalcoder-laydate layui-input' lay-verify='magicalCoderVerify' magicalcoder-verify='' value='' />"
-                },{
-                    name:"弹窗",
-                    icon:"assets/drag/img/left/t1.png",
-                    html:"<span class='magical-coder-layer-contaner'><button class='magicalcoder-layer layui-btn' mc-attr-num-type='1' mc-attr-bool-shade='false' mc-attr-bool-shade-close='true'  mc-attr-str-btn='保存,取消' mc-attr-str-area='800px,600px'>弹窗</button><div class='magicalcoder-layer-content'></div></span>"
-                },{
-                    name:"标签页",
-                    icon:"assets/drag/img/left/tagpg1.png",
-                    html:"<div class='layui-tab'><ul class='layui-tab-title'><li class='magicalcoder-tab-title layui-this'>MagicalCoder</li><li class='magicalcoder-tab-title'>MagicalDrag</li></ul><div class='layui-tab-content'><div class='layui-tab-item layui-show'></div><div class='layui-tab-item'></div></div></div>"
-                },{
-                    name:"卡片",
-                    icon:"assets/drag/img/left/card1.png",
-                    html:"<div class='layui-card'><div class='layui-card-header'>卡片</div><div class='layui-card-body'></div></div>"
-                },{
-                    name:"折叠",
-                    icon:"assets/drag/img/left/fold1.png",
-                    html:"<div class='layui-collapse'><div class='layui-colla-item'><h2 class='layui-colla-title'>Youyaboot</h2><div class='layui-colla-content layui-show'></div></div><div class='layui-colla-item'><h2 class='layui-colla-title'>优雅web框架</h2><div class='layui-colla-content'></div></div></div>"
-                },{
-                    name:"引用",
-                    icon:"assets/drag/img/left/quoteone1.png",
-                    html:"<blockquote class='layui-elem-quote'></blockquote>"
-                },{
-                    name:"字段区",
-                    icon:"assets/drag/img/left/fieldone1.png",
-                    html:"<fieldset class='layui-elem-field'><legend>字段集区块 - 默认风格</legend><div class='layui-field-box'></div></fieldset>"
-                },{
-                    name:"分割线",
-                    icon:"assets/drag/img/left/line1.png",
-                    html:"<hr>"
-                },{
-                    name:"导航",
-                    icon:"assets/drag/img/left/navigation1.png",
-                    html:"<ul class='layui-nav'><li class='layui-nav-item'><a>产品</a></li><li class='layui-nav-item'><a href='javascript:;'>解决方案</a><dl class='layui-nav-child'><dd><a>移动模块</a></dd><dd><a>后台模版</a></dd></dl></li></ul>"
-                },
-                {
-                    name:"面包屑",
-                    icon:"assets/drag/img/left/line1.png",
-                    html:"<span class='layui-breadcrumb'><a>首页</a><a>列表</a></span>"
-                },
-                {
-                    name:"图标",
-                    icon:"assets/drag/img/left/other1.png",
-                    html:"<i class='layui-icon layui-icon-face-smile'></i>"
-                }
-
-                /*时间线的图标有bug非常奇怪*/
-            ]
-        },{
-            name:"其他不常用",
+            name:"图形",
             children:[
                 {
                     name:"徽章",
                     icon:"assets/drag/img/left/dot1.png",
                     html:"<span class='layui-badge-dot'></span>"
-                },{
-                    name:"超链接",
-                    icon:"assets/drag/img/left/url1.png",
-                    html:"<a href='http://www.magicalcoder.com'>超链接</a>"
-                },{
-                    name:"图标文字",
-                    icon:"assets/drag/img/left/url1.png",
-                    html:"<i>*</i>"
-                },{
-                    name:"段落",
-                    icon:"assets/drag/img/left/p1.png",
-                    html:"<p>这是一段落</p>"
-                },{
-                    name:"小字",
-                    icon:"assets/drag/img/left/smallline1.png",
-                    html:"<small>小字</small>"
-                },{
-                    name:"高亮",
-                    icon:"assets/drag/img/left/lightchar1.png",
-                    html:"<mark>高亮</mark>"
-                },{
-                    name:"中划线",
-                    icon:"assets/drag/img/left/centerline1.png",
-                    html:"<del>中划线</del>"
-                },{
-                    name:"下划线",
-                    icon:"assets/drag/img/left/underline1.png",
-                    html:"<u>下划线</u>"
-                },{
-                    name:"斜体",
-                    icon:"assets/drag/img/left/italic1.png",
-                    html:"<em>斜体</em>"
-                },{
-                    name:"加粗",
-                    icon:"assets/drag/img/left/bold1.png",
-                    html:"<strong>加粗</strong>"
                 }
             ]
-        },
-        {
-            name:"更多组件均持续添加中",
+        },{
+            name:"图片",
+            children:[
+                {
+                    name:"图片",
+                    icon:"assets/drag/img/left/photo1.png",
+                    html:"<img style='width:100%;' src='img.jpg'/>"
+                }
+            ]
+        },{
+            name:"媒体",
             children:[
                 {
                     name:"音频",
@@ -406,13 +185,277 @@ function Constant(){
                     name:"视频",
                     icon:"",
                     html:"<video controls='controls'></video>"
-                },{
-                    name:"网页",
-                    icon:"",
-                    html:"<iframe src='http://www.magicalcoder.com' frameborder='0'></iframe>"
-                },
+                }
             ]
         }
+            // ,{
+        //     // name:"容器",
+        //     // children:[
+        //     //     {
+        //     //         name:"左右行列",
+        //     //         icon:"assets/drag/img/left/around1.png",
+        //     //         html:"<div class='layui-row'><div class='layui-col-md6'></div><div class='layui-col-md6'></div></div>",
+        //     //     },{
+        //     //         name:"上下行列",
+        //     //         icon:"assets/drag/img/left/updown1.png",
+        //     //         html:"<div class='layui-row'><div class='layui-col-xs12'></div><div class='layui-col-xs12'></div></div>",
+        //     //     },{
+        //     //         name:"居中容器",
+        //     //         icon:"assets/drag/img/left/wide1.png",
+        //     //         html:"<div class='layui-container'></div>",
+        //     //     },{
+        //     //         name:"屏幕自适应",
+        //     //         icon:"assets/drag/img/left/wide1.png",
+        //     //         html:"<div class='layui-fluid'></div>",
+        //     //     },{
+        //     //         name:"自由定位",
+        //     //         icon:"assets/drag/img/left/freedom1.png",
+        //     //         html:"<div class='mc-ui-absolute-pane'></div>",
+        //     //     },
+        //     // ]
+        // },{
+        //     name:"定制化的表单",
+        //     children:[
+        //         {
+        //             name:"表单容器",
+        //             icon:"assets/drag/img/left/menu1.png",
+        //             html:"<form class='layui-form'><div class='layui-form-item'><label class='layui-form-label'>标题</label><div class='layui-input-block'></div></div><div class='layui-form-item'><div class='layui-inline'><label class='layui-form-label'>标题</label><div class='layui-input-inline'></div></div><div class='layui-inline'><label class='layui-form-label'>标题</label><div class='layui-input-inline'></div></div></div><div class='layui-form-item'><div class='layui-input-block'><a class='layui-btn'>确定</a></div></div></form>"
+        //         },{
+        //             name:"单列条目",
+        //             icon:"assets/drag/img/left/clauses1.png",
+        //             html:"<div class='layui-form-item'><label class='layui-form-label'>标题</label><div class='layui-input-block'></div></div>"
+        //         },{
+        //             name:"多列条目",
+        //             icon:"assets/drag/img/left/clauses1.png",
+        //             html:"<div class='layui-form-item'><div class='layui-inline'><label class='layui-form-label'>标题</label><div class='layui-input-inline'></div></div><div class='layui-inline'><label class='layui-form-label'>标题</label><div class='layui-input-inline'></div></div></div>"
+        //         },{
+        //             name:"按钮条目",
+        //             icon:"assets/drag/img/left/clauses1.png",
+        //             html:"<div class='layui-form-item'><div class='layui-input-block'><a class='layui-btn'>确定</a></div></div>"
+        //         },{
+        //             name:"块级区域",
+        //             icon:"assets/drag/img/left/chunk1.png",
+        //             html:"<div class='layui-input-block'></div>"
+        //         },{
+        //             name:"行内区域",
+        //             icon:"assets/drag/img/left/row1.png",
+        //             html:"<div class='layui-inline'></div>"
+        //         },{
+        //             name:"输入行内",
+        //             icon:"assets/drag/img/left/import1.png",
+        //             html:"<div class='layui-input-inline'></div>"
+        //         },{
+        //             name:"极小区域",
+        //             icon:"assets/drag/img/left/mini1.png",
+        //             html:"<div class='layui-form-mid'>-</div>"
+        //         },{
+        //             name:"按钮组",
+        //             icon:"assets/drag/img/left/btngroup1.png",
+        //             html:"<div class='layui-btn-group'><a class='layui-btn'>按钮</a></div>"
+        //         },{
+        //             name:"标题",
+        //             icon:"assets/drag/img/left/other1.png",
+        //             html:"<label class='layui-form-label'>标题</label>"
+        //         },
+        //
+        //     ]
+        // },{
+        //     name:"表单控件",
+        //     children:[
+        //         {
+        //             name:"输入框",
+        //             icon:"assets/drag/img/left/import1.png",
+        //             html:"<input type='text' autocomplete='off' class='layui-input'/>"
+        //         }/*,{
+        //             name:"密码框",
+        //             icon:"assets/drag/img/left/password1.png",
+        //             html:"<input type='password' autocomplete='off' class='layui-input'/>"
+        //         }*/,{
+        //             name:"文本框",
+        //             icon:"assets/drag/img/left/text1.png",
+        //             html:"<textarea placeholder='请输入内容' class='layui-textarea'></textarea>"
+        //         },{
+        //             name:"下拉框",
+        //             icon:"assets/drag/img/left/pull1.png",
+        //             html:"<select><option value='0'>选项A</option><option value='1'>选项B</option>"
+        //         },{
+        //             name:"开关",
+        //             icon:"assets/drag/img/left/onoff1.png",
+        //             html:"<input type='checkbox' name='switch' lay-skin='switch'>"
+        //         },{
+        //             name:"单选",
+        //             icon:"assets/drag/img/left/choice1.png",
+        //             html:"<input type='radio' name='sex' value='1' title='男'>"
+        //         },{
+        //             name:"复选框",
+        //             icon:"assets/drag/img/left/multiple1.png",
+        //             html:"<input type='checkbox' name='checkbox' title='复选框'>"
+        //         },{
+        //             name:"图片",
+        //             icon:"assets/drag/img/left/photo1.png",
+        //             html:"<img style='width:100%;' src='img.jpg'/>"
+        //         },{
+        //             name:"按钮",
+        //             icon:"assets/drag/img/left/btn1.png",
+        //             html:"<a class='layui-btn'>按钮</a>"
+        //         }
+        //     ]
+        // },
+        // {
+        //     name:"高级组件",
+        //     children:[
+        //         {
+        //             name:"文件上传",
+        //             icon:"assets/drag/img/left/uploading1.png",
+        //             html:"<button type='button' class='magicalcoder-layupload layui-btn'>上传图片</button>"
+        //         },
+        //         {
+        //             name:"颜色选择器",
+        //             icon:"assets/drag/img/left/color1.png",
+        //             html:"<div class='magicalcoder-color-picker'></div>"
+        //         },
+        //         {
+        //             name:"滑块",
+        //             icon:"assets/drag/img/left/sliding1.png",
+        //             html:"<div class='magicalcoder-slider' mc-attr-bool-tips='true'></div>"
+        //         },
+        //         {
+        //             name:"评分",
+        //             icon:"assets/drag/img/left/grade1.png",
+        //             html:"<div class='magicalcoder-rate'></div>"
+        //         },
+        //         {
+        //             name:"动态表格",
+        //             icon:"assets/drag/img/left/form1.png",
+        //             html:"<div mc-attr-bool-loading='false' class='magicalcoder-table'  mc-attr-str-url='assets/drag/js/data/layui/list.json' mc-attr-str-toolbar='#tableToolbar' mc-attr-json-default-toolbar='[&quot;filter&quot;,&quot;exports&quot;,&quot;print&quot;]'><div id='tableToolbar' class='magicalcoder-table-tool-bar layui-hide'><div class='layui-inline' lay-event='add'><i class='layui-icon layui-icon-add-1'></i></div><div class='layui-inline' lay-event='update'><i class='layui-icon layui-icon-edit'></i></div><div class='layui-inline' lay-event='delete'><i class='layui-icon layui-icon-delete'></i></div></div><span class='magicalcoder-table-th layui-hide' mc-attr-str-field='id'>ID</span><span class='magicalcoder-table-th layui-hide' mc-attr-str-field='name'>名称</span><span class='magicalcoder-table-th layui-hide' mc-attr-str-field='description'>简介</span><span class='magicalcoder-table-th layui-hide' mc-attr-str-toolbar='#tableColToolbar'>操作</span><div id='tableColToolbar' class='magicalcoder-table-col-tool-bar layui-hide'><a class='layui-btn layui-btn-xs' lay-event='detail'>查看</a><a class='layui-btn layui-btn-xs' lay-event='edit'>编辑</a><a class='layui-btn layui-btn-danger layui-btn-xs' lay-event='del'>删除</a></div></div>"
+        //         },{
+        //             name:"静态表格",
+        //             icon:"assets/drag/img/left/form1.png",
+        //             html:"<table class='layui-table'><thead><tr><th>列1</th><th>列2</th><th>列3</th></tr></thead><tbody><tr><td></td><td></td><td></td></tr></tbody></table>"
+        //         },
+        //         {
+        //             name:"代码",
+        //             icon:"assets/drag/img/left/code1.png",
+        //             html:"<div class='magicalcoder-code' mc-attr-bool-about='false'></div>"
+        //         },{
+        //             name:"轮播",
+        //             icon:"assets/drag/img/left/carousel1.png",
+        //             html:"<div class='layui-carousel' mc-attr-bool-autoplay='true' mc-attr-num-interval='3000' mc-attr-str-width='100%'><div class='magicalcoder-carousel-items' carousel-item><div class='magicalcoder-carousel-item'></div><div class='magicalcoder-carousel-item'></div></div></div>"
+        //         },{
+        //             name:"日期",
+        //             icon:"assets/drag/img/left/day1.png",
+        //             html:"<input type='text' name='createTime' placeholder='' autocomplete='off' class='magicalcoder-laydate layui-input' lay-verify='magicalCoderVerify' magicalcoder-verify='' value='' />"
+        //         },{
+        //             name:"弹窗",
+        //             icon:"assets/drag/img/left/t1.png",
+        //             html:"<span class='magical-coder-layer-contaner'><button class='magicalcoder-layer layui-btn' mc-attr-num-type='1' mc-attr-bool-shade='false' mc-attr-bool-shade-close='true'  mc-attr-str-btn='保存,取消' mc-attr-str-area='800px,600px'>弹窗</button><div class='magicalcoder-layer-content'></div></span>"
+        //         },{
+        //             name:"标签页",
+        //             icon:"assets/drag/img/left/tagpg1.png",
+        //             html:"<div class='layui-tab'><ul class='layui-tab-title'><li class='magicalcoder-tab-title layui-this'>MagicalCoder</li><li class='magicalcoder-tab-title'>MagicalDrag</li></ul><div class='layui-tab-content'><div class='layui-tab-item layui-show'></div><div class='layui-tab-item'></div></div></div>"
+        //         },{
+        //             name:"卡片",
+        //             icon:"assets/drag/img/left/card1.png",
+        //             html:"<div class='layui-card'><div class='layui-card-header'>卡片</div><div class='layui-card-body'></div></div>"
+        //         },{
+        //             name:"折叠",
+        //             icon:"assets/drag/img/left/fold1.png",
+        //             html:"<div class='layui-collapse'><div class='layui-colla-item'><h2 class='layui-colla-title'>Youyaboot</h2><div class='layui-colla-content layui-show'></div></div><div class='layui-colla-item'><h2 class='layui-colla-title'>优雅web框架</h2><div class='layui-colla-content'></div></div></div>"
+        //         },{
+        //             name:"引用",
+        //             icon:"assets/drag/img/left/quoteone1.png",
+        //             html:"<blockquote class='layui-elem-quote'></blockquote>"
+        //         },{
+        //             name:"字段区",
+        //             icon:"assets/drag/img/left/fieldone1.png",
+        //             html:"<fieldset class='layui-elem-field'><legend>字段集区块 - 默认风格</legend><div class='layui-field-box'></div></fieldset>"
+        //         },{
+        //             name:"分割线",
+        //             icon:"assets/drag/img/left/line1.png",
+        //             html:"<hr>"
+        //         },{
+        //             name:"导航",
+        //             icon:"assets/drag/img/left/navigation1.png",
+        //             html:"<ul class='layui-nav'><li class='layui-nav-item'><a>产品</a></li><li class='layui-nav-item'><a href='javascript:;'>解决方案</a><dl class='layui-nav-child'><dd><a>移动模块</a></dd><dd><a>后台模版</a></dd></dl></li></ul>"
+        //         },
+        //         {
+        //             name:"面包屑",
+        //             icon:"assets/drag/img/left/line1.png",
+        //             html:"<span class='layui-breadcrumb'><a>首页</a><a>列表</a></span>"
+        //         },
+        //         {
+        //             name:"图标",
+        //             icon:"assets/drag/img/left/other1.png",
+        //             html:"<i class='layui-icon layui-icon-face-smile'></i>"
+        //         }
+        //
+        //         /*时间线的图标有bug非常奇怪*/
+        //     ]
+        // },{
+        //     name:"其他不常用",
+        //     children:[
+        //         {
+        //             name:"徽章",
+        //             icon:"assets/drag/img/left/dot1.png",
+        //             html:"<span class='layui-badge-dot'></span>"
+        //         },{
+        //             name:"超链接",
+        //             icon:"assets/drag/img/left/url1.png",
+        //             html:"<a href='http://www.magicalcoder.com'>超链接</a>"
+        //         },{
+        //             name:"图标文字",
+        //             icon:"assets/drag/img/left/url1.png",
+        //             html:"<i>*</i>"
+        //         },{
+        //             name:"段落",
+        //             icon:"assets/drag/img/left/p1.png",
+        //             html:"<p>这是一段落</p>"
+        //         },{
+        //             name:"小字",
+        //             icon:"assets/drag/img/left/smallline1.png",
+        //             html:"<small>小字</small>"
+        //         },{
+        //             name:"高亮",
+        //             icon:"assets/drag/img/left/lightchar1.png",
+        //             html:"<mark>高亮</mark>"
+        //         },{
+        //             name:"中划线",
+        //             icon:"assets/drag/img/left/centerline1.png",
+        //             html:"<del>中划线</del>"
+        //         },{
+        //             name:"下划线",
+        //             icon:"assets/drag/img/left/underline1.png",
+        //             html:"<u>下划线</u>"
+        //         },{
+        //             name:"斜体",
+        //             icon:"assets/drag/img/left/italic1.png",
+        //             html:"<em>斜体</em>"
+        //         },{
+        //             name:"加粗",
+        //             icon:"assets/drag/img/left/bold1.png",
+        //             html:"<strong>加粗</strong>"
+        //         }
+        //     ]
+        // },
+        // {
+        //     name:"更多组件均持续添加中",
+        //     children:[
+        //         {
+        //             name:"音频",
+        //             icon:"",
+        //             html:"<audio controls='controls'></audio>"
+        //         },
+        //         {
+        //             name:"视频",
+        //             icon:"",
+        //             html:"<video controls='controls'></video>"
+        //         },{
+        //             name:"网页",
+        //             icon:"",
+        //             html:"<iframe src='http://www.magicalcoder.com' frameborder='0'></iframe>"
+        //         },
+        //     ]
+        // }
     ]
     /*
     更多细节 参考文档

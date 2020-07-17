@@ -32,12 +32,13 @@ function ApplicationEnv(){
                 /*导航树*/
                 navigateTree:{
                     /*是否启用*/
-                    enable:true,
+                    // enable:false,//禁用导航树
+                    enable:true,//启用导航树
                 },
                 /*样式工具箱*/
                 styleTool:{
                     /*是否启用*/
-                    enable:true,
+                    enable:true
                 },
                 /*文件上传*/
                 file:{
@@ -58,17 +59,20 @@ function ApplicationEnv(){
                 },
                 /*javascript脚本 <script>标签是否开启 尽量别开format:true 可能有点问题*/
                 javascript:{
-                    enable:true,
+                    // enable:true,
+                    enable:false,//隐藏index-layui.html 脚本页签
                     format:false
                 },
                 /*html <html>标签是否开启*/
                 html:{
-                    enable:true,
+                    // enable:true,
+                    enable:false,//隐藏index-layui.html  html页签
                     format:false
                 },
                 /*css样式*/
                 css:{
-                    enable:true,
+                    // enable:true,
+                    enable:false,//隐藏index-layui.html 样式页签
                     format:true
                 },
                 /*代码调试 采用打开新连接方式 输出一个新页面，把用户的html放在新页面 这样就可以利用浏览器的调试功能 */
@@ -85,6 +89,7 @@ function ApplicationEnv(){
                 },
                 //布局器右上角有个预览按钮 在弹窗打开 预览一下实际情况 因不同ui依赖资源不同 所以采用配置方式来加载资源
                 view:{
+
                     //预览地址
                     url:"view.html",
                     //layui弹窗配置 area[0]宽如果不写则自动根据当前选中的设备模式宽 area[1]高
